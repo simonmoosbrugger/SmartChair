@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
+using System.Diagnostics;
 
 
 namespace SmartChair.db
@@ -31,11 +32,18 @@ namespace SmartChair.db
 
         public void CreateTables()
         {
-            string createTable = System.IO.File.ReadAllText(_CreateScript);
-            SQLiteCommand command = new SQLiteCommand(_Connection);
-            command.CommandText = createTable;
-            command.ExecuteNonQuery();
-            command.Dispose();
+            try
+            {
+                string createTable = System.IO.File.ReadAllText(_CreateScript);
+                SQLiteCommand command = new SQLiteCommand(_Connection);
+                command.CommandText = createTable;
+                command.ExecuteNonQuery();
+                command.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
 
         public DataTable Select(string Query)
