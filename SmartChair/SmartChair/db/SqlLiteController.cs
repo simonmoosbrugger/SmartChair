@@ -6,31 +6,45 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 using System.Diagnostics;
+using SmartChair.controller;
 
 
 namespace SmartChair.db
 {
     class SqlLiteController : DbController
     {
+        private static SqlLiteController _Instance;
+
         string _DataSource = "SmartChairDB.db";
         string _CreateScript = @"db/DbCreate.sql";
         SQLiteConnection _Connection;
 
+        public static SqlLiteController Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new SqlLiteController();
+                }
+                return _Instance;
+            }
+        }
 
-        public SqlLiteController()
+        private SqlLiteController()
         {
             Init();
             CreateTables();
         }
 
-        public void Init()
+        private void Init()
         {
             _Connection = new SQLiteConnection();
             _Connection.ConnectionString = "Data Source=" + _DataSource;
             _Connection.Open();
         }
 
-        public void CreateTables()
+        private void CreateTables()
         {
             try
             {
@@ -61,9 +75,33 @@ namespace SmartChair.db
             return command.ExecuteScalar();
         }
 
-        public void Insert(string Table, List<string> ColumnNames, List<string> Values)
+        public void Insert(string Table, List<string> ColumnNames, List<Object> Values)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("INSERT INTO ");
+            sb.Append(Table);
+            sb.Append(" (");
+            foreach (string column in ColumnNames)
+            {
+                sb.Append(column);
+                sb.Append(",");
+            }
+            sb.Remove(sb.Length - 1, 1);
+            sb.Append(") VALUES (");
+
+            foreach (string value in Values)
+            {
+                if (value.GetType() == typeof(string))
+                {
+                    sb.Append("'" + value + "',");
+                }
+                else
+                {
+                    sb.Append(value + ",");
+                }
+            }
+            sb.Remove(sb.Length - 1, 1);
+            sb.Append(")");
         }
 
         public void Update()

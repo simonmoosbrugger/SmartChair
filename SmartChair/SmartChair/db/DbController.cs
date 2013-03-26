@@ -11,7 +11,7 @@ namespace SmartChair.db
     {
         DataTable Select(string Query);
         Object SelectScalar(string Query);
-        void Insert(String Table, List<string> ColumnNames, List<string> Values);
+        void Insert(String Table, List<string> ColumnNames, List<Object> Values);
         void Update();
         void Delete();
         void Close();
