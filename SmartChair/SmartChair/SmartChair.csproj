@@ -65,6 +65,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="controller\MainController.cs" />
+    <Compile Include="controller\PersonController.cs" />
     <Compile Include="db\DbController.cs" />
     <Compile Include="db\SqlLiteController.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -73,6 +75,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
