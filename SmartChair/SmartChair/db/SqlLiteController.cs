@@ -12,25 +12,11 @@ namespace SmartChair.db
 {
     public class SqlLiteController : DbController
     {
-        private static SqlLiteController _Instance;
-
         string _DataSource = "SmartChairDB.db";
         string _CreateScript = @"db/DbCreate.sql";
         SQLiteConnection _Connection;
 
-        public static SqlLiteController Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = new SqlLiteController();
-                }
-                return _Instance;
-            }
-        }
-
-        private SqlLiteController()
+        public SqlLiteController()
         {
             Init();
             CreateTables();

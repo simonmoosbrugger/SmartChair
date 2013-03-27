@@ -10,15 +10,31 @@ namespace SmartChair.controller
     public class MainController
     {
         private static MainController _c;
+        private PersonController _personController;
+        private DataController _dataController;
+        private DbController _dbController;
+
+        public PersonController PersonController
+        {
+            get { return _personController; }
+        }
+
+        public DataController DataController
+        {
+            get { return _dataController; }
+        }
+        
+        public DbController DbController
+        {
+            get { return _dbController; }
+        }
 
         public static MainController Controller
         {
             get {
                 if (_c == null)
                 {
-                    _c = new MainController();
-                    List<Person> persons = PersonController.Instance.getPersons();
-                    PersonController.Instance.CurrentPerson = persons[0];
+                    _c = new MainController();                    
                 }
                 return MainController._c; 
             }
@@ -26,17 +42,12 @@ namespace SmartChair.controller
 
         private MainController()
         {
-            
-        }
+            _dataController = new WiiController();
+            _personController = new PersonController();
+            _dbController = new SqlLiteController();
 
-        public DbController getDBController()
-        {
-            return SqlLiteController.Instance;
-        }
-
-        public PersonController getPersonController()
-        {
-            return PersonController.Instance;
+            List<Person> persons = _personController.getPersons();
+            _personController.CurrentPerson = persons[0];
         }
     }
 }

@@ -10,21 +10,7 @@ namespace SmartChair.controller
 {
     public class WiiController : DataController
     {
-        private static WiiController _Instance;
-      
-        public static WiiController Instance
-        {
-            get
-            {
-                if (_Instance == null)
-                {
-                    _Instance = new WiiController();
-                }
-                return _Instance;
-            }
-        }
-
-        private WiiController()
+        public WiiController()
         {
             Init();
         }
