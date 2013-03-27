@@ -38,7 +38,7 @@
             />
 
         <Line
-            x:Name="CenterGravity"
+            x:Name="CenterPoint"
             X1="400" 
             Y1="400"
             X2="395"
