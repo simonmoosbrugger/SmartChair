@@ -23,8 +23,7 @@ namespace SmartChair.gui
     {
         public CenterGravity()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
     }
 }
