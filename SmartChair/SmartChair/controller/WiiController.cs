@@ -35,8 +35,10 @@ namespace SmartChair.controller
             float x = e.WiimoteState.BalanceBoardState.CenterOfGravity.X;
             float y = e.WiimoteState.BalanceBoardState.CenterOfGravity.Y;
             SensorData data = new SensorData(bl, br, tl, tr, wkg, new SensorData.CenterOfGravity(x, y));
+            SendSensorData(data);
 
-            this.SendData(data);
+            float battery = e.WiimoteState.Battery;
+            SendBatteryStat(battery);
         }
     }
 }
