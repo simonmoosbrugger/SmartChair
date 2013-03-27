@@ -27,7 +27,7 @@ namespace SmartChair
         {
             InitializeComponent();
             SqlLiteController c = new SqlLiteController();
-
+            MainFrame.Navigate(new Weightcontrol());
         }
     }
 }

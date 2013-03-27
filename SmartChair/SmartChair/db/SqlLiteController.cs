@@ -8,7 +8,6 @@ using System.Data;
 using System.Diagnostics;
 using SmartChair.controller;
 
-
 namespace SmartChair.db
 {
     class SqlLiteController : DbController
@@ -62,10 +61,10 @@ namespace SmartChair.db
 
         public DataTable Select(string Query)
         {
-            SQLiteCommand command = new SQLiteCommand(_Connection);
-            command.CommandText = Query;
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(Query, _Connection);
             DataTable dt = new DataTable();
-            dt.Load(command.ExecuteReader());
+            adapter.Fill(dt);
+
             return dt;
         }
 

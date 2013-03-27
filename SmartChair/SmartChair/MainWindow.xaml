@@ -16,5 +16,6 @@
                 <MenuItem Header="_Exit" />
             </MenuItem>
         </Menu>
+        <Frame x:Name="MainFrame" />
     </StackPanel>
 </Window>
