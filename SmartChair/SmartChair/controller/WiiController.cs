@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartChair.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,10 +8,9 @@ using WiimoteLib;
 
 namespace SmartChair.controller
 {
-    class WiiController
+    public class WiiController : DataController
     {
         private static WiiController _Instance;
-
       
         public static WiiController Instance
         {
@@ -39,7 +39,16 @@ namespace SmartChair.controller
 
         private void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
-            //e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomLeft
+            float bl = e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomLeft;
+            float br = e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomRight;
+            float tl = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft;
+            float tr = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopRight;
+            float wkg = e.WiimoteState.BalanceBoardState.WeightKg;
+            float x = e.WiimoteState.BalanceBoardState.CenterOfGravity.X;
+            float y = e.WiimoteState.BalanceBoardState.CenterOfGravity.Y;
+            SensorData data = new SensorData(bl, br, tl, tr, wkg, new SensorData.CenterOfGravity(x, y));
+
+            this.sendData(data);
         }
     }
 }
