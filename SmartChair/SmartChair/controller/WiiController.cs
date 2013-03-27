@@ -11,6 +11,7 @@ namespace SmartChair.controller
     {
         private static WiiController _Instance;
 
+      
         public static WiiController Instance
         {
             get

@@ -4,24 +4,34 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="600" d:DesignWidth="1250"
 	Title="CenterGravity">
 
     <Grid>
         <Line
-            X1="150" 
+            X1="625" 
             Y1="0"
-            X2="150"
-            Y2="300"
+            X2="625"
+            Y2="600"
             Stroke="Black"
             StrokeThickness="4" />
 
         <Line
             X1="0" 
-            Y1="150"
-            X2="300"
-            Y2="150"
+            Y1="300"
+            X2="1250"
+            Y2="300"
             Stroke="Black"
             StrokeThickness="4" />
+        
+        <Line
+            x:Name="CenterGravity"
+            X1="55" 
+            Y1="55"
+            X2="50"
+            Y2="50"
+            Stroke="Red"
+            StrokeThickness="8"
+            />  
     </Grid>
 </Page>
