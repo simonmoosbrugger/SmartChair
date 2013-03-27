@@ -52,6 +52,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="WiimoteLib, Version=1.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\WiimoteLib.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -68,6 +72,10 @@
     <Compile Include="Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
     </Compile>
+    <Page Include="gui\CenterGravity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -80,6 +88,10 @@
     <Compile Include="controller\PersonController.cs" />
     <Compile Include="db\DbController.cs" />
     <Compile Include="db\SqlLiteController.cs" />
+    <Compile Include="controller\WiiController.cs" />
+    <Compile Include="gui\CenterGravity.xaml.cs">
+      <DependentUpon>CenterGravity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -124,6 +136,7 @@
     </Content>
     <Content Include="db\DbData.sql" />
     <Content Include="lib\System.Data.SQLite.DLL" />
+    <Content Include="lib\WiimoteLib.dll" />
     <Resource Include="lib\System.Data.SQLite.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

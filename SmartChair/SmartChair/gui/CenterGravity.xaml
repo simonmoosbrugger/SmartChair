@@ -9,19 +9,19 @@
 
     <Grid>
         <Line
-            X1="50" 
-            Y1="50"
-            X2="200"
-            Y2="200"
-            Stroke="Red"
+            X1="150" 
+            Y1="0"
+            X2="150"
+            Y2="300"
+            Stroke="Black"
             StrokeThickness="4" />
 
         <Line
-            X1="50" 
-            Y1="50"
-            X2="200"
-            Y2="200"
-            Stroke="Blue"
+            X1="0" 
+            Y1="150"
+            X2="300"
+            Y2="150"
+            Stroke="Black"
             StrokeThickness="4" />
     </Grid>
 </Page>
