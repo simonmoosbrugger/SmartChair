@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmartChair.db
 {
-    interface DbController
+    public interface DbController
     {
         DataTable Select(string Query);
         Object SelectScalar(string Query);

@@ -10,7 +10,7 @@ using SmartChair.controller;
 
 namespace SmartChair.db
 {
-    class SqlLiteController : DbController
+    public class SqlLiteController : DbController
     {
         private static SqlLiteController _Instance;
 

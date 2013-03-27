@@ -24,11 +24,11 @@ namespace SmartChair
     /// </summary>
     public partial class Weightcontrol : Page
     {
-        DbController _db;
+        private MainController _c;
 
         public Weightcontrol()
         {
-            _db = new SqlLiteController();
+            _c = MainController.Controller;
             InitializeComponent();
             
             dp1.SelectedDate = DateTime.Now.AddDays(-14);
@@ -74,9 +74,10 @@ namespace SmartChair
 
         private void updateChart()
         {
+            
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
-            DataTable dt = _db.Select("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "';");
+            DataTable dt = _c.getDBController().Select("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.Controller.getPersonController().CurrentPerson.ID + ";");
 
             List<KeyValuePair<DateTime, long>> values = new List<KeyValuePair<DateTime, long>>();
             foreach (DataRow row in dt.Rows)
