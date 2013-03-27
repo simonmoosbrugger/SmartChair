@@ -77,7 +77,7 @@ namespace SmartChair
             
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
-            DataTable dt = _c.getDBController().Select("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.Controller.getPersonController().CurrentPerson.ID + ";");
+            DataTable dt = MainController.Controller.DbController.Select("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.Controller.PersonController.CurrentPerson.ID + ";");
 
             List<KeyValuePair<DateTime, long>> values = new List<KeyValuePair<DateTime, long>>();
             foreach (DataRow row in dt.Rows)

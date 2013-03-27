@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using SmartChair.db;
+using SmartChair.controller;
 
 namespace SmartChair
 {
@@ -26,6 +27,7 @@ namespace SmartChair
         public MainWindow()
         {
             InitializeComponent();
+            MainController c = MainController.Controller;
             MainFrame.Navigate(new Weightcontrol());
         }
     }

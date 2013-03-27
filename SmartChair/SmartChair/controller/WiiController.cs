@@ -1,4 +1,5 @@
-﻿using SmartChair.model;
+﻿using SmartChair.db;
+using SmartChair.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,10 @@ namespace SmartChair.controller
 {
     public class WiiController : DataController
     {
-        public WiiController()
+        public WiiController(DbController dbController)
         {
             Init();
+            _dbController = dbController;
         }
 
         private void Init()

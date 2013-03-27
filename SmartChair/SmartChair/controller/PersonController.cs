@@ -11,13 +11,14 @@ namespace SmartChair.controller
 {
     public class PersonController
     {
+        DbController _dbController;
         Person _CurrentPerson;
         List<string> _Columns = new List<string>();
 
         public List<Person> getPersons()
         {
             string sql = "SELECT * from Person";
-            DataTable dt = MainController.Controller.DbController.Select(sql);
+            DataTable dt = _dbController.Select(sql);
             List<Person> list = new List<Person>();
             foreach (DataRow row in dt.Rows)
             {
@@ -42,10 +43,11 @@ namespace SmartChair.controller
             }
         }
 
-        public PersonController()
+        public PersonController(DbController dbController)
         {
             _Columns.Add("Fname");
             _Columns.Add("Lname");
+            _dbController = dbController;
         }
 
         public void AddUser(string Fname, string Lname)
@@ -53,7 +55,7 @@ namespace SmartChair.controller
             List<object> Values = new List<object>();
             Values.Add(Fname);
             Values.Add(Lname);
-            MainController.Controller.DbController.Insert("Person", _Columns, Values);
+            _dbController.Insert("Person", _Columns, Values);
         }
     }
 }

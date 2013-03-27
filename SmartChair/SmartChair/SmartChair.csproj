@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="controller\DataController.cs" />
+    <Compile Include="controller\TestDataController.cs" />
     <Compile Include="model\SensorData.cs" />
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="Weightcontrol.xaml.cs">

@@ -1,4 +1,5 @@
-﻿using SmartChair.model;
+﻿using SmartChair.db;
+using SmartChair.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace SmartChair.controller
     public abstract class DataController
     {
         private List<DataListener> _listeners;
+        protected DbController _dbController;
 
         public DataController()
         {

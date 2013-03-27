@@ -42,9 +42,9 @@ namespace SmartChair.controller
 
         private MainController()
         {
-            _dataController = new WiiController();
-            _personController = new PersonController();
             _dbController = new SqlLiteController();
+            //_dataController = new WiiController();
+            _personController = new PersonController(_dbController);
 
             List<Person> persons = _personController.getPersons();
             _personController.CurrentPerson = persons[0];
