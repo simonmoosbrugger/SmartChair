@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmartChair.model
 {
+    [Serializable()]
     public class SensorData
     {
         private float _bottomLeft, _bottomoRight, _topLeft, _topRight, _weightKg;
@@ -56,6 +57,7 @@ namespace SmartChair.model
             _cog = cog;
         }
 
+        [Serializable()]
         public class CenterOfGravity
         {
             private float _X, _Y;

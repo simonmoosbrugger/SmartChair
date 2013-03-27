@@ -34,7 +34,7 @@ namespace SmartChair.model
         public Person(long ID)
         {
             string sql = "SELECT * from Person where ID = " + ID;
-            DataTable dt = MainController.Controller.DbController.Select(sql);
+            DataTable dt = MainController.Controller.DbController.Execute(sql);
 
         }
 

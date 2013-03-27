@@ -2,6 +2,7 @@
 using SmartChair.model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -43,11 +44,22 @@ namespace SmartChair.controller
         private MainController()
         {
             _dbController = new SqlLiteController();
-            //_dataController = new WiiController();
+            _dataController = new TestDataController();
             _personController = new PersonController(_dbController);
 
             List<Person> persons = _personController.getPersons();
-            _personController.CurrentPerson = persons[0];
+            try
+            {
+                _personController.CurrentPerson = persons[0];
+            }
+            catch (Exception)
+            {
+                string testDataScript = @"db\DbData.sql";
+                string sql = File.ReadAllText(testDataScript);
+                _dbController.Execute(sql);
+                persons = _personController.getPersons();
+                _personController.CurrentPerson = persons[0];
+            }
         }
     }
 }

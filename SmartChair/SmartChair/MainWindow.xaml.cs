@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 
 using SmartChair.db;
 using SmartChair.controller;
+using SmartChair.gui;
 
 namespace SmartChair
 {

@@ -9,7 +9,7 @@ namespace SmartChair.db
 {
     public interface DbController
     {
-        DataTable Select(string Query);
+        DataTable Execute(string Query);
         Object SelectScalar(string Query);
         void Insert(String Table, List<string> ColumnNames, List<Object> Values);
         void Update();

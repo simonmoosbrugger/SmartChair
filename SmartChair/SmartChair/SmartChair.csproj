@@ -72,7 +72,7 @@
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="model\SensorData.cs" />
     <Compile Include="util\DateTimeParser.cs" />
-    <Compile Include="Weightcontrol.xaml.cs">
+    <Compile Include="gui\Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
     </Compile>
     <Page Include="gui\CenterGravity.xaml">
@@ -99,7 +99,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Weightcontrol.xaml">
+    <Page Include="gui\Weightcontrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,6 +123,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="controller\TestDataController_data.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,10 +137,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="controller\TestDataController_data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="db\DbCreate.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="db\DbData.sql" />
+    <Content Include="db\DbData.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="lib\System.Data.SQLite.DLL" />
     <Content Include="lib\WiimoteLib.dll" />
     <Resource Include="lib\System.Data.SQLite.xml" />

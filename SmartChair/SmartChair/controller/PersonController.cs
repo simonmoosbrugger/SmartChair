@@ -18,7 +18,7 @@ namespace SmartChair.controller
         public List<Person> getPersons()
         {
             string sql = "SELECT * from Person";
-            DataTable dt = _dbController.Select(sql);
+            DataTable dt = _dbController.Execute(sql);
             List<Person> list = new List<Person>();
             foreach (DataRow row in dt.Rows)
             {

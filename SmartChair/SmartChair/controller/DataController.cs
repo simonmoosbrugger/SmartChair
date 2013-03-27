@@ -18,7 +18,17 @@ namespace SmartChair.controller
             _listeners = new List<DataListener>();
         }
 
-        public void sendData(SensorData data){
+        public void AddListener(DataListener listener)
+        {
+            _listeners.Add(listener);
+        }
+
+        public void RemoveListener(DataListener listener)
+        {
+            _listeners.Remove(listener);
+        }
+
+        public void SendData(SensorData data){
             foreach (DataListener listener in _listeners)
             {
                 listener.DataUpdated(data);

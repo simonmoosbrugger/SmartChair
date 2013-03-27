@@ -45,7 +45,7 @@ namespace SmartChair.db
             }
         }
 
-        public DataTable Select(string Query)
+        public DataTable Execute(string Query)
         {
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(Query, _Connection);
             DataTable dt = new DataTable();
