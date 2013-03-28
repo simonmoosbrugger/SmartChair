@@ -1,4 +1,5 @@
 ﻿using SmartChair.db;
+using SmartChair.gui;
 using SmartChair.model;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace SmartChair.controller
             _dbController = new SqlLiteController();
             _dataController = new TestDataController();
             _personController = new PersonController(_dbController);
-
+           
             List<Person> persons = _personController.getPersons();
             try
             {

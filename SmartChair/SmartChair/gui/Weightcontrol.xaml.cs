@@ -22,7 +22,7 @@ namespace SmartChair.gui
     /// <summary>
     /// Interaktionslogik für weightcontrol.xaml
     /// </summary>
-    public partial class Weightcontrol : Page
+    public partial class Weightcontrol : Page, SmartChair.controller.DataController.SensorDataListener
     {
         private MainController _c;
 
@@ -87,6 +87,11 @@ namespace SmartChair.gui
                 values.Add(new KeyValuePair<DateTime, long>(date, weight));
             }
             lineChart.DataContext = values;
+        }
+
+        public void SensorDataUpdated(model.SensorData data)
+        {
+
         }
     }
 }
