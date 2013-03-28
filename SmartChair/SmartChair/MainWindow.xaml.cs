@@ -30,7 +30,7 @@ namespace SmartChair
             InitializeComponent();
             MainController c = MainController.Controller;
             Weightcontrol wc = new Weightcontrol();
-            c.DataController.AddListener(wc);
+            c.DataController.AddSensorDataListener(wc);
             MainFrame.Navigate(wc);
         }
     }

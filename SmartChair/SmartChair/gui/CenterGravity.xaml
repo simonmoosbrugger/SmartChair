@@ -41,10 +41,19 @@
             x:Name="CenterPoint"
             X1="400" 
             Y1="400"
-            X2="395"
-            Y2="395"
+            X2="381"
+            Y2="400"
             Stroke="Red"
-            StrokeThickness="8"
+            StrokeThickness="6"
+            />
+        <Line
+            x:Name="CenterPoint2"
+            X1="390" 
+            Y1="409"
+            X2="390"
+            Y2="391"
+            Stroke="Red"
+            StrokeThickness="6"
             />
     </Grid>
 </Page>

@@ -20,14 +20,24 @@ namespace SmartChair.controller
             _batteryStatListeners = new List<BatteryStatListener>();
         }
 
-        public void AddListener(SensorDataListener listener)
+        public void AddSensorDataListener(SensorDataListener listener)
         {
             _sensorDataListeners.Add(listener);
         }
 
-        public void RemoveListener(SensorDataListener listener)
+        public void RemoveSensorDataListener(SensorDataListener listener)
         {
             _sensorDataListeners.Remove(listener);
+        }
+
+        public void AddBatteryStatListener(BatteryStatListener listener)
+        {
+            _batteryStatListeners.Add(listener);
+        }
+
+        public void RemoveBatteryStatListener(BatteryStatListener listener)
+        {
+            _batteryStatListeners.Remove(listener);
         }
 
         public void SendSensorData(SensorData data){

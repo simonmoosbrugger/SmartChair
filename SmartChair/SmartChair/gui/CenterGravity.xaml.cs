@@ -19,11 +19,17 @@ namespace SmartChair.gui
     /// <summary>
     /// Interaktionslogik für CenterGravity.xaml
     /// </summary>
-    public partial class CenterGravity : Page
+    public partial class CenterGravity : Page, SmartChair.controller.DataController.SensorDataListener
     {
         public CenterGravity()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            MainController.Controller.DataController.AddSensorDataListener(this);
+        }
+
+        public void SensorDataUpdated(model.SensorData data)
+        {
+            
         }
     }
 }
