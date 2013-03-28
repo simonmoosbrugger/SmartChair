@@ -25,13 +25,23 @@ namespace SmartChair
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Weightcontrol _wc;
         public MainWindow()
         {
             InitializeComponent();
             MainController c = MainController.Controller;
-            Weightcontrol wc = new Weightcontrol();
-            c.DataController.AddSensorDataListener(wc);
-            MainFrame.Navigate(wc);
+            _wc = new Weightcontrol();
+            c.DataController.AddSensorDataListener(_wc);
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CenterGravity());
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(_wc);
         }
     }
 }

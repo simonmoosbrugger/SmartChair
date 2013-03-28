@@ -3,19 +3,7 @@ using SmartChair.db;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SmartChair.gui
 {
@@ -24,11 +12,8 @@ namespace SmartChair.gui
     /// </summary>
     public partial class Weightcontrol : Page, SmartChair.controller.DataController.SensorDataListener
     {
-        private MainController _c;
-
         public Weightcontrol()
         {
-            _c = MainController.Controller;
             InitializeComponent();
             
             dp1.SelectedDate = DateTime.Now.AddDays(-14);
@@ -59,8 +44,6 @@ namespace SmartChair.gui
         {
             updateChart();
         }
-
-        //DateTime.Now.ToString("yyyy-MM-dd HH:MM")
 
         private void dp2_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {

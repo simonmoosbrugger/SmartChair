@@ -1,9 +1,5 @@
 ﻿using SmartChair.controller;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace SmartChair.model
 {
@@ -12,7 +8,7 @@ namespace SmartChair.model
         private long _ID;
         private string _Fname;
         private string _Lname;
-        
+
         public string Firstname
         {
             get { return _Fname; }
@@ -35,7 +31,6 @@ namespace SmartChair.model
         {
             string sql = "SELECT * from Person where ID = " + ID;
             DataTable dt = MainController.Controller.DbController.Execute(sql);
-
         }
 
         public Person(string Fname, string Lname)

@@ -116,7 +116,7 @@ namespace SmartChair.controller
                         SendBatteryStat(_batteryPercentage);
                     }
 
-                    Thread.Sleep(2000);
+                    Thread.Sleep(500);
                 }
             }
         }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SmartChair.model
 {
@@ -48,7 +44,8 @@ namespace SmartChair.model
             set { _bottomLeft = value; }
         }
 
-        public SensorData(float bL, float bR, float tL, float tR, float wKg, CenterOfGravity cog){
+        public SensorData(float bL, float bR, float tL, float tR, float wKg, CenterOfGravity cog)
+        {
             _bottomLeft = bL;
             _bottomoRight = bR;
             _topLeft = tL;

@@ -15,6 +15,12 @@
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>
+            <MenuItem Header="_Test">
+                <MenuItem Header="_Gravity" Click="MenuItem_Click_1" />
+                <Separator />
+                <MenuItem Header="_Weight" Click="MenuItem_Click_2" />
+                <Separator />
+            </MenuItem>
         </Menu>
         <Frame x:Name="MainFrame" />
     </StackPanel>

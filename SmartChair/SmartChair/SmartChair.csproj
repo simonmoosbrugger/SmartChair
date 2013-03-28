@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Recharging">
+      <HintPath>lib\Recharging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -70,11 +73,18 @@
     </ApplicationDefinition>
     <Compile Include="controller\DataController.cs" />
     <Compile Include="controller\TestDataController.cs" />
+    <Compile Include="gui\BatteryTest.xaml.cs">
+      <DependentUpon>BatteryTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="model\SensorData.cs" />
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="gui\Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
     </Compile>
+    <Page Include="gui\BatteryTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="gui\CenterGravity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
