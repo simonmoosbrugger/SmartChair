@@ -34,6 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FirstFloor.ModernUI, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\ModernUI.1.0.2\net40\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\ModernUI.1.0.2\net40\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernUIDemo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\ModernUI.1.0.2\ModernUIDemo.exe</HintPath>
+    </Reference>
     <Reference Include="Recharging">
       <HintPath>lib\Recharging.dll</HintPath>
     </Reference>
@@ -79,6 +91,9 @@
       <DependentUpon>BatteryTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\ExtendedPage.cs" />
+    <Compile Include="gui\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="gui\Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
@@ -90,6 +105,10 @@
     <Page Include="gui\CenterGravity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\StartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -163,10 +182,15 @@
     <Content Include="db\DbData.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\waage.jpg" />
+    <Content Include="lib\FirstFloor.ModernUI.dll" />
+    <Content Include="lib\Microsoft.Windows.Shell.dll" />
+    <Content Include="lib\ModernUIDemo.exe" />
     <Content Include="lib\System.Data.SQLite.DLL" />
     <Content Include="lib\WiimoteLib.dll" />
     <Resource Include="lib\System.Data.SQLite.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

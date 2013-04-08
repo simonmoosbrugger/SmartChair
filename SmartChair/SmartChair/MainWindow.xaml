@@ -1,9 +1,14 @@
-﻿<Window x:Class="SmartChair.MainWindow"
+﻿
+
+
+
+<Window x:Class="SmartChair.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
+        Title="SmartChair"  Height="680" Width="1250" WindowStartupLocation="CenterScreen" >
 
-    <StackPanel>
+    <Frame x:Name="MainFrame" />
+    <!--StackPanel>
         <Menu>
             <MenuItem Header="_File">
                 <MenuItem Header="_New..." />
@@ -25,6 +30,6 @@
                 <Separator />
             </MenuItem>
         </Menu>
-        <Frame x:Name="MainFrame" />
-    </StackPanel>
+    
+    </StackPanel-->
 </Window>
