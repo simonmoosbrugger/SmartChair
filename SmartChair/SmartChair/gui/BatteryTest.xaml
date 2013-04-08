@@ -6,8 +6,18 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="BatteryTest">
-
     <Grid>
-        
+        <ProgressBar Height="156" HorizontalAlignment="Center" Margin="0" Name="progressBar1" VerticalAlignment="Bottom" Width="132" Orientation="Vertical">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FFDEDE17" Offset="0.541" />
+                    <GradientStop Color="#FF009600" Offset="0.988" />
+                    <GradientStop Color="#FF0DAD1D" Offset="0.023" />
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <Label Content="%" Height="33" HorizontalAlignment="Center" Margin="0" Name="LblBatteryLifePercent" VerticalAlignment="Center" FontSize="20" Width="46" Foreground="#FFAD1616" />
+        <Label Content="Label" Height="39" HorizontalAlignment="Center" Margin="0,41,0,0" Name="lblStatus" VerticalAlignment="Top" FontSize="20" Width="278" HorizontalContentAlignment="Center" />
+        <Label Content="Battery Status" FontSize="20" Height="39" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="0,10,0,0" Name="label1" VerticalAlignment="Top" Width="278" />
     </Grid>
 </Page>
