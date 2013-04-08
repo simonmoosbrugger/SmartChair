@@ -23,7 +23,7 @@ namespace SmartChair.gui
             _centerPoint1CoordY = new Point(CenterPoint.Y1, CenterPoint.Y2);
             _centerPoint2CoordX = new Point(CenterPoint2.X1, CenterPoint2.X2);
             _centerPoint2CoordY = new Point(CenterPoint2.Y1, CenterPoint2.Y2);
-            MainController.Controller.DataController.AddSensorDataListener(this);
+            MainController.GetInstance.DataController.AddSensorDataListener(this);
         }
 
         public void SensorDataUpdated(model.SensorData data)

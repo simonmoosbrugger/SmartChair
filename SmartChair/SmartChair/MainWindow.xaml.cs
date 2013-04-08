@@ -32,7 +32,7 @@ namespace SmartChair
             InitializeComponent();
 
             //Init Maincontroller
-            _mc = MainController.Controller;
+            _mc = MainController.GetInstance;
             _mc.NavigationController.setFrame(MainFrame);
         }
 

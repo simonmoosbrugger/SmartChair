@@ -17,9 +17,9 @@ namespace SmartChair.controller
         private DbController _dbController;
         private NavigationController _navigationController;
 
-        public PersonController PersonController
+        public Person CurrentPerson
         {
-            get { return _personController; }
+            get { return _personController.CurrentPerson; }
         }
 
         public DataController DataController
@@ -43,7 +43,7 @@ namespace SmartChair.controller
             }
         }
 
-        public static MainController Controller
+        public static MainController GetInstance
         {
             get {
                 if (_c == null)

@@ -41,10 +41,11 @@ namespace SmartChair.controller
             _frame.Navigate(_wc);
         }
 
-        public void navigateGame()
-        {
-
-        }
+        //public void navigateStart()
+        //{
+        //    removeListener();
+        //    _frame.Navigate(new Startpage());
+        //}
 
         private void removeListener()
         {

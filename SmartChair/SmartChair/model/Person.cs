@@ -30,7 +30,7 @@ namespace SmartChair.model
         public Person(long ID)
         {
             string sql = "SELECT * from Person where ID = " + ID;
-            DataTable dt = MainController.Controller.DbController.Execute(sql);
+            DataTable dt = MainController.GetInstance.DbController.Execute(sql);
         }
 
         public Person(string Fname, string Lname)
