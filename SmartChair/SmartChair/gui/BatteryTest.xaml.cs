@@ -18,11 +18,16 @@ namespace SmartChair.gui
     /// <summary>
     /// Interaktionslogik für BatteryTest.xaml
     /// </summary>
-    public partial class BatteryTest : Page
+    public partial class BatteryTest : Page, PageExtended
     {
         public BatteryTest()
         {
             InitializeComponent();
+        }
+
+        public bool RemoveListener()
+        {
+            return true;
         }
     }
 }

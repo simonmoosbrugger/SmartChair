@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDataGenerator", "TestDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleEarthNew", "GoogleEarthNew\GoogleEarthNew.csproj", "{628195FB-1C66-4870-85AF-D5FD70B5774A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClientTest", "GameClientTest\GameClientTest.csproj", "{B4FF539A-9E06-4693-9793-1FCE0A4B7332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorData", "SensorData\SensorData.csproj", "{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{628195FB-1C66-4870-85AF-D5FD70B5774A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{628195FB-1C66-4870-85AF-D5FD70B5774A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{628195FB-1C66-4870-85AF-D5FD70B5774A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4FF539A-9E06-4693-9793-1FCE0A4B7332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4FF539A-9E06-4693-9793-1FCE0A4B7332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4FF539A-9E06-4693-9793-1FCE0A4B7332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4FF539A-9E06-4693-9793-1FCE0A4B7332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

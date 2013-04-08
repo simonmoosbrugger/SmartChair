@@ -72,11 +72,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="controller\DataController.cs" />
+    <Compile Include="controller\GameController.cs" />
+    <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="gui\BatteryTest.xaml.cs">
       <DependentUpon>BatteryTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="model\SensorData.cs" />
+    <Compile Include="gui\ExtendedPage.cs" />
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="gui\Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
@@ -145,7 +147,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SensorData\SensorData.csproj">
+      <Project>{a69b7404-0f37-4a89-8087-0ccee95b4ad7}</Project>
+      <Name>SensorData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="controller\TestDataController_data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

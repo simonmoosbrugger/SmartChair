@@ -60,6 +60,7 @@ namespace SmartChair.controller
             }
 
             Thread thread = new Thread(new ThreadStart(sendTestData));
+            thread.IsBackground = true;
             thread.Start();
         }
 

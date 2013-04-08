@@ -10,7 +10,7 @@ namespace SmartChair.gui
     /// <summary>
     /// Interaktionslogik für weightcontrol.xaml
     /// </summary>
-    public partial class Weightcontrol : Page, SmartChair.controller.DataController.SensorDataListener
+    public partial class Weightcontrol : Page, PageExtended, SmartChair.controller.DataController.SensorDataListener
     {
         public Weightcontrol()
         {
@@ -75,6 +75,11 @@ namespace SmartChair.gui
         public void SensorDataUpdated(model.SensorData data)
         {
 
+        }
+
+        public bool RemoveListener()
+        {
+            return false;
         }
     }
 }

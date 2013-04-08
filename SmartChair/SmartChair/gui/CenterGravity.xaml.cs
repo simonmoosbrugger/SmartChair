@@ -11,7 +11,7 @@ namespace SmartChair.gui
     /// <summary>
     /// Interaktionslogik für CenterGravity.xaml
     /// </summary>
-    public partial class CenterGravity : Page, SmartChair.controller.DataController.SensorDataListener
+    public partial class CenterGravity : Page, PageExtended, SmartChair.controller.DataController.SensorDataListener
     {
         private Point _centerPoint1CoordX, _centerPoint1CoordY, _centerPoint2CoordX, _centerPoint2CoordY;
         private int _scale = 40;
@@ -50,6 +50,11 @@ namespace SmartChair.gui
                     }
                 }
             ));
+        }
+
+        public bool RemoveListener()
+        {
+            return true;
         }
     }
 }

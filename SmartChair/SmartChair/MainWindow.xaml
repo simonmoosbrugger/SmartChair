@@ -20,6 +20,9 @@
                 <Separator />
                 <MenuItem Header="_Weight" Click="MenuItem_Click_2" />
                 <Separator />
+                <MenuItem Header="GameServer Start" Click="gs_start_Click" />
+                <MenuItem Header="GameServer Stop" Click="gs_stop_Click" />
+                <Separator />
             </MenuItem>
         </Menu>
         <Frame x:Name="MainFrame" />

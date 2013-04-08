@@ -15,6 +15,7 @@ namespace SmartChair.controller
         private PersonController _personController;
         private DataController _dataController;
         private DbController _dbController;
+        private NavigationController _navigationController;
 
         public PersonController PersonController
         {
@@ -29,6 +30,17 @@ namespace SmartChair.controller
         public DbController DbController
         {
             get { return _dbController; }
+        }
+
+        public NavigationController NavigationController
+        {
+            get {
+                if (_navigationController == null)
+                {
+                    _navigationController = new NavigationController(_dataController);
+                }
+                return _navigationController; 
+            }
         }
 
         public static MainController Controller
@@ -47,7 +59,7 @@ namespace SmartChair.controller
             _dbController = new SqlLiteController();
             _dataController = new TestDataController();
             _personController = new PersonController(_dbController);
-           
+  
             List<Person> persons = _personController.getPersons();
             try
             {
