@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -60,6 +61,11 @@ namespace GoogleEarthNew
 
         public Form1()
         {
+            foreach (Process p in Process.GetProcessesByName("googleearth"))
+            {
+                p.Kill();
+            }
+
             InitializeComponent();
 
             ge = new EARTHLib.ApplicationGE();
@@ -83,16 +89,28 @@ namespace GoogleEarthNew
 
         private void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs e)
         {
-            if (e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft > 80 && e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft > 80)
+            if (e.WiimoteState.BalanceBoardState.CenterOfGravity.Y >= 5)
             {
-                Zoom(10000, 4);
+                Zoom(-zoom, 30);
+            }
+            else if (e.WiimoteState.BalanceBoardState.CenterOfGravity.Y <= -2)
+            {
+                Zoom(zoom, 30);
             }
 
-            else if (e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomLeft > 80 && e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomRight > 80)
-            {
-                Zoom(-10000, 4);
-            }
+
+            //if (e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft > 70 && e.WiimoteState.BalanceBoardState.SensorValuesKg.TopRight > 70)
+            //{
+            //    Zoom(zoom, 30);
+            //}
+
+            //else if (e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomLeft > 70 && e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomRight > 70)
+            //{
+            //    Zoom(-zoom, 30);
+            //}
         }
+
+        int zoom = 40000;
 
         private void Zoom(int dist, int speed)
         {
@@ -116,6 +134,11 @@ namespace GoogleEarthNew
             SWP_FRAMECHANGED);
 
             SendMessage(ge.GetRenderHwnd(), WM_COMMAND, WM_SIZE, 0);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

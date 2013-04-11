@@ -35,6 +35,8 @@ namespace SmartChair
             _mc = MainController.GetInstance;
             _mc.NavigationController.setFrame(MainFrame);
             _mc.NavigationController.navigateStart();
+
+            GameController gc = new GameController(_mc.DataController);
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)

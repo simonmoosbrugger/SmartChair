@@ -62,15 +62,18 @@ public class GameController : MonoBehaviour
 			WonGame ();
 		}
 	}
-
+	
+	public SensorData _data;
+	
 	private  void getMessage ()
 	{
 		while (true) {
 			NetworkStream stream = _clientSocket.GetStream ();
 			BinaryFormatter formatter = new BinaryFormatter ();
 			object obj = formatter.Deserialize (stream);
-			SensorData data = (SensorData)obj;
-			Console.WriteLine (data.BottomLeft + " - " + data.BottomoRight + " - " + data.TopLeft + " - " + data.TopRight);
+			//SensorData data = (SensorData)obj;
+			//Console.WriteLine (data.BottomLeft + " - " + data.BottomoRight + " - " + data.TopLeft + " - " + data.TopRight);
+			_data = (SensorData)obj;
 		}
 	}
 
