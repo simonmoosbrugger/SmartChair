@@ -8,24 +8,15 @@
 	Title="weightcontrol"
       xmlns:chartingToolkit=
 	"clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
-    <Grid Width="500">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition />
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DatePicker Name="dp1" Width="140" Grid.Row="1" Grid.Column="0"/>
-        <DatePicker Name="dp2" Width="140" Grid.Row="1" Grid.Column="1"/>
-        <chartingToolkit:Chart Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0" Name="lineChart" Title="" 
-		        VerticalAlignment="Bottom" Height="254" Width="500">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" >
+            <DatePicker Name="dp1" Width="140" Height="25"/>
+            <DatePicker Name="dp2" Width="140" Height="25"/>
+        </StackPanel>
+            <chartingToolkit:Chart Name="lineChart" Title="" Height="500" >
             <chartingToolkit:LineSeries  DependentValuePath="Value" 
 		            IndependentValuePath="Key" ItemsSource="{Binding}" 
 		            IsSelectionEnabled="True" />
         </chartingToolkit:Chart>
-    </Grid>
+    </StackPanel>
 </Page>

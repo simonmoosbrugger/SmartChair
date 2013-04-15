@@ -183,6 +183,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="images\waage.jpg" />
+    <Resource Include="images\center_of_gravity.png" />
+    <Resource Include="images\marble.PNG" />
+    <Resource Include="images\battery.jpeg" />
     <Content Include="lib\FirstFloor.ModernUI.dll" />
     <Content Include="lib\Microsoft.Windows.Shell.dll" />
     <Content Include="lib\ModernUIDemo.exe" />

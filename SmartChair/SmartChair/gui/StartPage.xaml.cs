@@ -1,5 +1,8 @@
-﻿using System;
+﻿using SmartChair.controller;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -22,6 +25,28 @@ namespace SmartChair.gui
         public StartPage()
         {
             InitializeComponent();
+        }
+
+        private void Cog_Click(object sender, RoutedEventArgs e)
+        {
+            MainController.GetInstance.NavigationController.navigateCOG();
+
+        }
+
+        private void weight_click(object sender, RoutedEventArgs e)
+        {
+            MainController.GetInstance.NavigationController.navigateWeight();
+        }
+
+        private void marble_click(object sender, RoutedEventArgs e)
+        {
+            FileInfo fi = new FileInfo(@"marble\marble.exe");
+            Process.Start(fi.FullName);    
+        }
+
+        private void battery_click(object sender, RoutedEventArgs e)
+        {
+            MainController.GetInstance.NavigationController.navigateBattery();
         }
 
     }

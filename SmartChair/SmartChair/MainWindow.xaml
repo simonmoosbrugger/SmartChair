@@ -5,7 +5,8 @@
 <Window x:Class="SmartChair.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SmartChair"  Height="680" Width="1250" WindowStartupLocation="CenterScreen" >
+        Title="SmartChair"   Height="680" Width="1250" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
 
     <Frame x:Name="MainFrame" />
     <!--StackPanel>

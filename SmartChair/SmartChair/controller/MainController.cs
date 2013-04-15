@@ -57,8 +57,8 @@ namespace SmartChair.controller
         private MainController()
         {
             _dbController = new SqlLiteController();
-            //_dataController = new TestDataController();
-            _dataController = new WiiController();
+            _dataController = new TestDataController();
+            //_dataController = new WiiController();
             _personController = new PersonController(_dbController);
   
             List<Person> persons = _personController.getPersons();

@@ -107,10 +107,10 @@ namespace SmartChair.controller
                     {
                         _lastBatteryDecrease = now;
                         SendBatteryStat(_batteryPercentage);
-                    } else if (_batteryPercentage == 0 && (now - (DateTime)_lastBatteryDecrease).TotalMinutes >= 5)
+                    } else if (_batteryPercentage == 0 && (now - (DateTime)_lastBatteryDecrease).TotalSeconds >= 30)
                     {
                         _batteryPercentage = 100;
-                    }else if ((now - (DateTime)_lastBatteryDecrease).TotalMinutes >= 1)
+                    } else if (_batteryPercentage != 0 && (now - (DateTime)_lastBatteryDecrease).TotalSeconds >= 5)
                     {
                         _lastBatteryDecrease = now;
                         _batteryPercentage -= 20;

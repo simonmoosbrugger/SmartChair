@@ -33,12 +33,14 @@ namespace SmartChair.controller
             CenterGravity cog = new CenterGravity();
             _dataController.AddSensorDataListener(cog);
             _frame.Navigate(cog);
+            _lastPage = cog;
         }
 
         public void navigateWeight()
         {
             removeListener();
             _frame.Navigate(_wc);
+            _lastPage = _wc;
         }
 
         public void navigateStart()
@@ -47,11 +49,25 @@ namespace SmartChair.controller
             _frame.Navigate(new StartPage());
         }
 
+        public void navigateBattery()
+        {
+            removeListener();
+            BatteryTest bt = new BatteryTest();
+            _dataController.AddBatteryStatListener(bt);
+            _frame.Navigate(bt);
+            _lastPage = bt;
+        }
+
         private void removeListener()
         {
             if (_lastPage != null && _lastPage is DataController.SensorDataListener && _lastPage.RemoveListener() == true)
             {
                 _dataController.RemoveSensorDataListener((DataController.SensorDataListener)_lastPage);
+            }
+
+            if (_lastPage != null && _lastPage is DataController.BatteryStatListener && _lastPage.RemoveListener() == true)
+            {
+                _dataController.RemoveBatteryStatListener((DataController.BatteryStatListener)_lastPage);
             }
         }
     }

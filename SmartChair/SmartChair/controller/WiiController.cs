@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WiimoteLib;
 
 namespace SmartChair.controller
@@ -20,7 +21,17 @@ namespace SmartChair.controller
         {
             Wiimote wm = new Wiimote();
             wm.WiimoteChanged += wm_WiimoteChanged;
-            wm.Connect();
+
+            try
+            {
+                wm.Connect();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Balance Board not connected", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                App.Current.Shutdown();
+            }
+       
             wm.SetReportType(InputReport.IRAccel, true);
         }
 

@@ -36,10 +36,8 @@
                 <Grid>
                     <Border Name="Mask" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
-                            <Hyperlink NavigateUri="Weightcontrol.xaml">
+                        <Button Click="weight_click">
                                 <Image Name="Receiver" Source="/images/waage.jpg" />
-                            </Hyperlink>
                         </Button>
                        
                         <StackPanel.OpacityMask>
@@ -62,10 +60,8 @@
                 <Grid>
                     <Border Name="Mask1" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
-                            <Hyperlink NavigateUri="CenterGravity.xaml">
-                                <Image Name="Receiver1" Source="/images/waage.jpg" />
-                            </Hyperlink>
+                        <Button Height="170" Click="Cog_Click">
+                                <Image Name="Receiver1" Source="/images/center_of_gravity.png" />
                         </Button>
 
                         <StackPanel.OpacityMask>
@@ -88,10 +84,8 @@
                 <Grid>
                     <Border Name="Mask2" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
-                            <Hyperlink NavigateUri="BatteryTest.xaml">
-                                <Image Name="Receiver2" Source="/images/waage.jpg" />
-                            </Hyperlink>
+                        <Button Height="170" Click="marble_click">
+                                <Image Name="Receiver2" Source="/images/marble.png" />
                         </Button>
 
                         <StackPanel.OpacityMask>
@@ -113,10 +107,8 @@
                 <Grid>
                     <Border Name="Mask3" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
-                            <Hyperlink NavigateUri="Page1.xaml">
-                                <Image Name="Receiver3" Source="/images/waage.jpg" />
-                            </Hyperlink>
+                        <Button Height="170" Click="battery_click">
+                                <Image Name="Receiver3" Source="/images/battery.jpeg" />
                         </Button>
 
                         <StackPanel.OpacityMask>
@@ -139,9 +131,9 @@
                 <Grid>
                     <Border Name="Mask4" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
+                        <Button IsEnabled="False" Height="170">
                             <Hyperlink NavigateUri="Page1.xaml">
-                                <Image Name="Receiver4" Source="/images/waage.jpg" />
+                                <!-- <Image Name="Receiver4" Source="/images/waage.jpg" />-->
                             </Hyperlink>
                         </Button>
 
@@ -165,9 +157,9 @@
                 <Grid>
                     <Border Name="Mask5" Background="White" BorderBrush="#FF3B5998" BorderThickness=".5" CornerRadius="13"></Border>
                     <StackPanel>
-                        <Button>
+                        <Button IsEnabled="False" Height="170">
                             <Hyperlink NavigateUri="Page1.xaml">
-                                <Image Name="Receiver5" Source="/images/waage.jpg" />
+                                <!--<Image Name="Receiver5" Source="/images/waage.jpg" />-->
                             </Hyperlink>
                         </Button>
 

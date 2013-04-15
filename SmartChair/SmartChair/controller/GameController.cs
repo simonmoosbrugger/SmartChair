@@ -79,7 +79,7 @@ namespace SmartChair.controller
 
                         formatter.Serialize(stream, data);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         clientsToDelete.Add(client);
                     }
