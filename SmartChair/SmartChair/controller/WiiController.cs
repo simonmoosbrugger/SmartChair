@@ -19,20 +19,20 @@ namespace SmartChair.controller
 
         private void Init()
         {
-            Wiimote wm = new Wiimote();
-            wm.WiimoteChanged += wm_WiimoteChanged;
-
             try
             {
+                Wiimote wm = new Wiimote();
+                wm.WiimoteChanged += wm_WiimoteChanged;
                 wm.Connect();
+                wm.SetReportType(InputReport.IRAccel, true);
             }
             catch (Exception)
             {
                 MessageBox.Show("Balance Board not connected", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 App.Current.Shutdown();
             }
-       
-            wm.SetReportType(InputReport.IRAccel, true);
+
+
         }
 
         private void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs e)
