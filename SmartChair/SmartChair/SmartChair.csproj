@@ -83,6 +83,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="content\CenterGravity.xaml.cs">
+      <DependentUpon>CenterGravity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="content\Weightcontrol.xaml.cs">
+      <DependentUpon>Weightcontrol.xaml</DependentUpon>
+    </Compile>
     <Compile Include="controller\DataController.cs" />
     <Compile Include="controller\GameController.cs" />
     <Compile Include="controller\NavigationController.cs" />
@@ -94,10 +100,21 @@
     <Compile Include="gui\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow2.xaml.cs">
+      <DependentUpon>MainWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="gui\Weightcontrol.xaml.cs">
       <DependentUpon>Weightcontrol.xaml</DependentUpon>
     </Compile>
+    <Page Include="content\CenterGravity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="content\Weightcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="gui\BatteryTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindow2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\Person.cs" />
@@ -150,6 +171,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Microsoft.Windows.Shell.dll" />
+    <Content Include="ModernUIDemo.exe" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -186,6 +209,7 @@
     <Resource Include="images\center_of_gravity.png" />
     <Resource Include="images\marble.PNG" />
     <Resource Include="images\battery.jpeg" />
+    <Content Include="FirstFloor.ModernUI.dll" />
     <Content Include="lib\FirstFloor.ModernUI.dll" />
     <Content Include="lib\Microsoft.Windows.Shell.dll" />
     <Content Include="lib\ModernUIDemo.exe" />
