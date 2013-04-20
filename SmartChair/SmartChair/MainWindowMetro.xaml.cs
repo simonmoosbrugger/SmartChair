@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using FirstFloor.ModernUI.Windows.Controls;
 
 namespace SmartChair
 {
     /// <summary>
-    /// Interaktionslogik für MainWindow2.xaml
+    /// Interaktionslogik für MainWindowMetro.xaml
     /// </summary>
-    public partial class MainWindow2 : ModernWindow
+    public partial class MainWindowMetro : MetroWindow
     {
-        public MainWindow2()
+        public MainWindowMetro()
         {
             InitializeComponent();
         }
