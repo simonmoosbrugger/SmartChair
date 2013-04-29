@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 
 
-namespace NotifyMessageDemo
+namespace SmartChair.gui.popup
 {
     public class NotifyMessageManager
     {

@@ -1,4 +1,4 @@
-﻿using NotifyMessageDemo;
+﻿using SmartChair.gui.popup;
 using SmartChair.db;
 using SmartChair.gui;
 using SmartChair.model;

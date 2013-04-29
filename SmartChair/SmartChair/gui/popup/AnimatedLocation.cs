@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NotifyMessageDemo
+namespace SmartChair.gui.popup
 {
     public class AnimatedLocation
     {

@@ -1,4 +1,4 @@
-﻿using NotifyMessageDemo;
+﻿using SmartChair.gui.popup;
 using SmartChair.gui;
 using System;
 using System.Collections.Generic;
@@ -104,7 +104,7 @@ namespace SmartChair.controller
             }
             else if (ti.Equals(_marbleTab))
             {
-                NotifyMessage msg = new NotifyMessage("Images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
+                NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
                                         () =>
                                         MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
 

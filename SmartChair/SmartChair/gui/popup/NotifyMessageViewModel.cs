@@ -2,7 +2,7 @@
 using System.Windows.Input;
 
 
-namespace NotifyMessageDemo
+namespace SmartChair.gui.popup
 {
     public class NotifyMessageViewModel
     {

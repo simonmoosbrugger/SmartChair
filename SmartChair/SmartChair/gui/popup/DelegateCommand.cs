@@ -5,7 +5,7 @@ using System.Windows.Input;
 using System.Collections.Generic;
 
 
-namespace NotifyMessageDemo
+namespace SmartChair.gui.popup
 {
 	/// <summary>
 	/// A command that executes delegates to determine whether the command can execute, and to execute the command.
