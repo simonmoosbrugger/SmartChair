@@ -38,10 +38,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\MahApps.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\ModernUI.1.0.2\net40\Microsoft.Windows.Shell.dll</HintPath>
-    </Reference>
     <Reference Include="Recharging">
       <HintPath>lib\Recharging.dll</HintPath>
     </Reference>
@@ -84,6 +80,9 @@
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="gui\ExtendedPage.cs" />
+    <Compile Include="gui\WindowHost.xaml.cs">
+      <DependentUpon>WindowHost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowMetro.xaml.cs">
       <DependentUpon>MainWindowMetro.xaml</DependentUpon>
     </Compile>
@@ -108,6 +107,10 @@
       <DependentUpon>CenterGravity.xaml</DependentUpon>
     </Compile>
     <Page Include="gui\Weightcontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\WindowHost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

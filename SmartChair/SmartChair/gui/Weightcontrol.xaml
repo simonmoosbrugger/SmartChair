@@ -10,7 +10,7 @@
 	"clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
     <StackPanel>
         <StackPanel Orientation="Horizontal" >
-            <DatePicker Name="dp1" Width="140" Height="25"/>
+            <DatePicker Name="dp1" Width="140" Height="25" Margin="10"/>
             <DatePicker Name="dp2" Width="140" Height="25"/>
         </StackPanel>
             <chartingToolkit:Chart Name="lineChart" Title="" Height="500" >
