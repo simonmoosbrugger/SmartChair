@@ -1,4 +1,5 @@
-﻿using SmartChair.db;
+﻿using NotifyMessageDemo;
+using SmartChair.db;
 using SmartChair.gui;
 using SmartChair.model;
 using System;
@@ -16,6 +17,8 @@ namespace SmartChair.controller
         private DataController _dataController;
         private DbController _dbController;
         private NavigationController _navigationController;
+
+        private NotifyMessageManager _notifyMessageMgr;
 
         public Person CurrentPerson
         {
@@ -74,6 +77,20 @@ namespace SmartChair.controller
                 persons = _personController.getPersons();
                 _personController.CurrentPerson = persons[0];
             }
+
+            _notifyMessageMgr = new NotifyMessageManager
+                (
+                    Screen.Width,
+                    Screen.Height,
+                    200,
+                    150
+                );
+            _notifyMessageMgr.Start();
+        }
+
+        public void EnqueNotificationMessage(NotifyMessage message)
+        {
+            _notifyMessageMgr.EnqueueMessage(message);
         }
     }
 }

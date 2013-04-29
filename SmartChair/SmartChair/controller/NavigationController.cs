@@ -1,9 +1,11 @@
-﻿using SmartChair.gui;
+﻿using NotifyMessageDemo;
+using SmartChair.gui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SmartChair.controller
@@ -85,7 +87,11 @@ namespace SmartChair.controller
             }
             else if (ti.Equals(_marbleTab))
             {
-                
+                NotifyMessage msg = new NotifyMessage("Images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
+                                        () =>
+                                        MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
+
+                MainController.GetInstance.EnqueNotificationMessage(msg);
             }
 
             ti.Content = f;

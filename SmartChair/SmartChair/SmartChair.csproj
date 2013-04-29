@@ -38,6 +38,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -81,6 +85,15 @@
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="gui\ExtendedPage.cs" />
+    <Compile Include="gui\popup\AnimatedLocation.cs" />
+    <Compile Include="gui\popup\DelegateCommand.cs" />
+    <Compile Include="gui\popup\NotifyMessage.cs" />
+    <Compile Include="gui\popup\NotifyMessageManager.cs" />
+    <Compile Include="gui\popup\NotifyMessageViewModel.cs" />
+    <Compile Include="gui\popup\NotifyMessageWindow.xaml.cs">
+      <DependentUpon>NotifyMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\popup\Screen.cs" />
     <Compile Include="gui\WindowHost.xaml.cs">
       <DependentUpon>WindowHost.xaml</DependentUpon>
     </Compile>
@@ -107,6 +120,10 @@
     <Compile Include="gui\CenterGravity.xaml.cs">
       <DependentUpon>CenterGravity.xaml</DependentUpon>
     </Compile>
+    <Page Include="gui\popup\NotifyMessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="gui\Weightcontrol.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +152,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="images\BlueSkin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="images\GreenSkin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="lib\MahApps.Metro.dll" />
     <Content Include="lib\WPFToolkit.dll" />
     <EmbeddedResource Include="Properties\Resources.resx">

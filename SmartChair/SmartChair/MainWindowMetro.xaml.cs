@@ -30,7 +30,6 @@ namespace SmartChair
             _mc = MainController.GetInstance;
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);
-           
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
