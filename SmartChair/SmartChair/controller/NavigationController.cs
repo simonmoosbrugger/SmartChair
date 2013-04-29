@@ -13,9 +13,13 @@ namespace SmartChair.controller
         private DataController _dataController;
         private Weightcontrol _wc;
         private PageExtended _lastPage;
-        private TabItem _weightTab;
+        TabItem _weightTab;
         TabItem _cogTab;
         TabItem _marbleTab;
+
+        TabItem _weightTabSettings;
+        TabItem _cogTabSettings;
+        TabItem _marbleTabSettings;
 
 
         public void InitTabs(TabControl tabControl)
@@ -29,6 +33,19 @@ namespace SmartChair.controller
             tabControl.Items.Add(_weightTab);
             tabControl.Items.Add(_cogTab);
             tabControl.Items.Add(_marbleTab);
+        }
+
+        public void InitSettingsTabs(TabControl tabControl)
+        {
+            _weightTabSettings = new TabItem();
+            _weightTabSettings.Header = "Weight";
+            _cogTabSettings = new TabItem();
+            _cogTabSettings.Header = "Center of Gravity";
+            _marbleTabSettings = new TabItem();
+            _marbleTabSettings.Header = "Marble";
+            tabControl.Items.Add(_weightTabSettings);
+            tabControl.Items.Add(_cogTabSettings);
+            tabControl.Items.Add(_marbleTabSettings);
         }
 
         public NavigationController(DataController dataController)
@@ -84,6 +101,28 @@ namespace SmartChair.controller
                 navigateCOG(f);
             }
             else if (ti.Equals(_marbleTab))
+            {
+                
+            }
+
+            ti.Content = f;
+        }
+
+        public void NavigateSettings(TabItem ti)
+        {
+            Frame f = new Frame();
+
+            if (ti.Equals(_weightTabSettings))
+            {
+                WeightSettings ws = new WeightSettings();
+                f.Content = ws;
+            }
+            else if (ti.Equals(_cogTabSettings))
+            {
+                CogSettings cs = new CogSettings();
+                f.Content = cs;
+            }
+            else if (ti.Equals(_marbleTabSettings))
             {
                 
             }
