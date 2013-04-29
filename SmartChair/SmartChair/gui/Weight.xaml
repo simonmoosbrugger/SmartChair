@@ -13,7 +13,7 @@
             <DatePicker Name="dp1" Width="140" Height="25" Margin="10"/>
             <DatePicker Name="dp2" Width="140" Height="25"/>
         </StackPanel>
-            <chartingToolkit:Chart Name="lineChart" Title="" Height="500" >
+            <chartingToolkit:Chart Name="lineChart" Title="" Height="500" BorderThickness="0" >
             <chartingToolkit:LineSeries  DependentValuePath="Value" 
 		            IndependentValuePath="Key" ItemsSource="{Binding}" 
 		            IsSelectionEnabled="True" />

@@ -6,7 +6,9 @@
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
     Height="680" 
     Width="1250" 
+    Title="Smart Chair"
     WindowStartupLocation="CenterScreen"
+    Icon="images/report.ico"
     ResizeMode="NoResize">
 
     <Window.Resources>
@@ -24,7 +26,7 @@
 
     <Controls:MetroWindow.WindowCommands>
         <Controls:WindowCommands>
-            <Button Content="Settings" />
+            <Button Content="Settings" Click="Settings_Click" />
             <StackPanel Orientation="Horizontal">
                 <Rectangle Width="20" Height="20">
                     <Rectangle.Resources>

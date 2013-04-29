@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 using SmartChair.controller;
+using SmartChair.gui;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,15 @@ namespace SmartChair
             TabItem ti = (TabItem)e.AddedItems[0];
             _mc.NavigationController.Navigate(ti);
             
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            if (settings.ShowDialog() == true)
+            {
+
+            }
         }
     }
 }

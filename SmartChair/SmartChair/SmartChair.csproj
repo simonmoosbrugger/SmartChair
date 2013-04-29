@@ -84,6 +84,9 @@
     <Compile Include="controller\GameController.cs" />
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
+    <Compile Include="gui\CogSettings.xaml.cs">
+      <DependentUpon>CogSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\ExtendedPage.cs" />
     <Compile Include="gui\popup\AnimatedLocation.cs" />
     <Compile Include="gui\popup\DelegateCommand.cs" />
@@ -94,6 +97,12 @@
       <DependentUpon>NotifyMessageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\popup\Screen.cs" />
+    <Compile Include="gui\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\WeightSettings.xaml.cs">
+      <DependentUpon>WeightSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\WindowHost.xaml.cs">
       <DependentUpon>WindowHost.xaml</DependentUpon>
     </Compile>
@@ -101,8 +110,8 @@
       <DependentUpon>MainWindowMetro.xaml</DependentUpon>
     </Compile>
     <Compile Include="util\DateTimeParser.cs" />
-    <Compile Include="gui\Weightcontrol.xaml.cs">
-      <DependentUpon>Weightcontrol.xaml</DependentUpon>
+    <Compile Include="gui\Weight.xaml.cs">
+      <DependentUpon>Weight.xaml</DependentUpon>
     </Compile>
     <Page Include="gui\CenterGravity.xaml">
       <SubType>Designer</SubType>
@@ -125,6 +134,19 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="gui\Weightcontrol.xaml">
+    <Page Include="gui\CogSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\Weight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\WeightSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +180,7 @@
     <None Include="images\GreenSkin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Resource Include="images\report.ico" />
     <Content Include="lib\MahApps.Metro.dll" />
     <Content Include="lib\WPFToolkit.dll" />
     <EmbeddedResource Include="Properties\Resources.resx">
