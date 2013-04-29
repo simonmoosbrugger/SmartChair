@@ -55,21 +55,7 @@ namespace SmartChair.controller
             _frame.Navigate(_wc);
             _lastPage = _wc;
         }
-
-        public void navigateStart(Frame _frame)
-        {
-            removeListener();
-            _frame.Navigate(new StartPage());
-        }
-
-        public void navigateBattery(Frame _frame)
-        {
-            removeListener();
-            BatteryTest bt = new BatteryTest();
-            _dataController.AddBatteryStatListener(bt);
-            _frame.Navigate(bt);
-            _lastPage = bt;
-        }
+       
 
         private void removeListener()
         {
