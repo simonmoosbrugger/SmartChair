@@ -5,16 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="weightcontrol"
-      xmlns:chartingToolkit=
-	"clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+      xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+      xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
     <StackPanel>
         <StackPanel Orientation="Horizontal" >
-            <DatePicker Name="dp1" Width="140" Height="25" Margin="10"/>
+            <DatePicker Name="dp1" Width="140" Height="25" Margin="10,0"/>
             <DatePicker Name="dp2" Width="140" Height="25"/>
         </StackPanel>
-            <chartingToolkit:Chart Name="lineChart" Title="" Height="500" BorderThickness="0" >
-            <chartingToolkit:LineSeries  DependentValuePath="Value" 
+            <chartingToolkit:Chart Name="lineChart" Height="500" BorderThickness="0" >
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="datavis:Legend">
+                        <Setter Property="Width" Value="0" />
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+                <chartingToolkit:LineSeries  DependentValuePath="Value" 
 		            IndependentValuePath="Key" ItemsSource="{Binding}" 
 		            IsSelectionEnabled="True" />
         </chartingToolkit:Chart>
