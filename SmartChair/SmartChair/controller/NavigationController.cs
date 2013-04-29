@@ -11,9 +11,25 @@ namespace SmartChair.controller
     public class NavigationController
     {
         private DataController _dataController;
-        private Frame _frame;
         private Weightcontrol _wc;
         private PageExtended _lastPage;
+        private TabItem _weightTab;
+        TabItem _cogTab;
+        TabItem _marbleTab;
+
+
+        public void InitTabs(TabControl tabControl)
+        {
+            _weightTab = new TabItem();
+            _weightTab.Header = "Weight";
+            _cogTab = new TabItem();
+            _cogTab.Header = "Center of Gravity";
+            _marbleTab = new TabItem();
+            _marbleTab.Header = "Marble";
+            tabControl.Items.Add(_weightTab);
+            tabControl.Items.Add(_cogTab);
+            tabControl.Items.Add(_marbleTab);
+        }
 
         public NavigationController(DataController dataController)
         {
@@ -22,34 +38,31 @@ namespace SmartChair.controller
             _dataController.AddSensorDataListener(_wc);
         }
 
-        public void setFrame(Frame frame)
-        {
-            _frame = frame;
-        }
-
-        public void navigateCOG()
+        public void navigateCOG(Frame _frame)
         {
             removeListener();
+
             CenterGravity cog = new CenterGravity();
             _dataController.AddSensorDataListener(cog);
+            _cogTab.Content = cog;
             _frame.Navigate(cog);
             _lastPage = cog;
         }
 
-        public void navigateWeight()
+        public void navigateWeight(Frame _frame)
         {
             removeListener();
             _frame.Navigate(_wc);
             _lastPage = _wc;
         }
 
-        public void navigateStart()
+        public void navigateStart(Frame _frame)
         {
             removeListener();
             _frame.Navigate(new StartPage());
         }
 
-        public void navigateBattery()
+        public void navigateBattery(Frame _frame)
         {
             removeListener();
             BatteryTest bt = new BatteryTest();
@@ -69,6 +82,27 @@ namespace SmartChair.controller
             {
                 _dataController.RemoveBatteryStatListener((DataController.BatteryStatListener)_lastPage);
             }
+        }
+
+        public void Navigate(TabItem ti)
+        {
+            Frame f = new Frame();
+
+            if (ti.Equals(_weightTab))
+            {
+                navigateWeight(f);
+            }
+            else if(ti.Equals(_cogTab))
+            {
+                
+                navigateCOG(f);
+            }
+            else if (ti.Equals(_marbleTab))
+            {
+                
+            }
+
+            ti.Content = f;
         }
     }
 }

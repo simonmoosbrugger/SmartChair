@@ -29,13 +29,13 @@ namespace SmartChair.gui
 
         private void Cog_Click(object sender, RoutedEventArgs e)
         {
-            MainController.GetInstance.NavigationController.navigateCOG();
+            //MainController.GetInstance.NavigationController.navigateCOG();
 
         }
 
         private void weight_click(object sender, RoutedEventArgs e)
         {
-            MainController.GetInstance.NavigationController.navigateWeight();
+            //MainController.GetInstance.NavigationController.navigateWeight();
         }
 
         private void marble_click(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace SmartChair.gui
 
         private void battery_click(object sender, RoutedEventArgs e)
         {
-            MainController.GetInstance.NavigationController.navigateBattery();
+            //MainController.GetInstance.NavigationController.navigateBattery();
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿<Controls:MetroWindow 
     x:Class="SmartChair.MainWindowMetro"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:smart="clr-namespace:SmartChair"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
     Title="MainWindowMetro" 
@@ -8,7 +9,7 @@
     Width="1250" 
     WindowStartupLocation="CenterScreen"
     ResizeMode="NoResize">
-    
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -42,10 +43,8 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
     <Grid>
-        <TabControl>
-            <TabItem Header="Weight">Weight</TabItem>
-            <TabItem Header="Center of Gravity">Center of Gravity</TabItem>
-            <TabItem Header="Marble Game">Marble Game</TabItem>
+        <TabControl x:Name="tabControl" SelectionChanged="TabControl_SelectionChanged">
+         
         </TabControl>
     </Grid>
 </Controls:MetroWindow>
