@@ -88,6 +88,9 @@
       <DependentUpon>CogSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\ExtendedPage.cs" />
+    <Compile Include="gui\Marble.xaml.cs">
+      <DependentUpon>Marble.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\popup\AnimatedLocation.cs" />
     <Compile Include="gui\popup\DelegateCommand.cs" />
     <Compile Include="gui\popup\NotifyMessage.cs" />
@@ -129,6 +132,10 @@
     <Compile Include="gui\CenterGravity.xaml.cs">
       <DependentUpon>CenterGravity.xaml</DependentUpon>
     </Compile>
+    <Page Include="gui\Marble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="gui\popup\NotifyMessageWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

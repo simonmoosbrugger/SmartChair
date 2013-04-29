@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Diagnostics;
 
 namespace SmartChair.controller
 {
@@ -91,6 +92,14 @@ namespace SmartChair.controller
 
         public void Navigate(TabItem ti)
         {
+            if (_lastPage is Marble)
+            {
+                foreach (Process p in Process.GetProcessesByName("marble"))
+                {
+                    p.Kill();
+                }
+            }
+
             Frame f = new Frame();
 
             if (ti.Equals(_weightTab))
@@ -104,11 +113,17 @@ namespace SmartChair.controller
             }
             else if (ti.Equals(_marbleTab))
             {
-                NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
-                                        () =>
-                                        MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
+                removeListener();
+                Marble mb = new Marble();
+                f.Navigate(mb);
+                _lastPage = mb;
+                
 
-                MainController.GetInstance.EnqueNotificationMessage(msg);
+                //NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
+                //                        () =>
+                //                        MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
+
+                //MainController.GetInstance.EnqueNotificationMessage(msg);
             }
 
             ti.Content = f;
