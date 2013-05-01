@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SmartChair.model;
 
 namespace SmartChair
 {
@@ -31,6 +32,9 @@ namespace SmartChair
             _mc = MainController.GetInstance;
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);
+
+            Person p = _mc.CurrentPerson;
+            txtName.Text = Environment.UserName;
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
