@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameClientTest", "GameClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorData", "SensorData\SensorData.csproj", "{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoPopupMessage", "AutoPopupMessage\AutoPopupMessage.csproj", "{CFFD0834-3A81-42AF-A687-35427A265DCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A69B7404-0F37-4A89-8087-0CCEE95B4AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFFD0834-3A81-42AF-A687-35427A265DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFD0834-3A81-42AF-A687-35427A265DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFD0834-3A81-42AF-A687-35427A265DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFD0834-3A81-42AF-A687-35427A265DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
