@@ -37,7 +37,7 @@
                 <Button>
                     <StackPanel Orientation="Horizontal">
                         <!--<Image Source="" Height="25"/> avatar picture -->
-                        <TextBlock Text="Simon Moosbrugger" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <TextBlock Name="txtName" VerticalAlignment="Center" Margin="5 0 0 0" FontWeight="Bold" Foreground="White"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
