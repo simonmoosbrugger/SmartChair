@@ -58,15 +58,15 @@ namespace AutoPopupMessage
 
             if (value % 2 == 0)
             {
-                msg = new NotifyMessage("Images/GreenSkin.png", "Green Skin Title", "Du hast nicht heute nicht viel bewogen. Willst du Spiel starten?",
+                msg = new NotifyMessage("Images/GreenSkin.png", "Green Skin Title", "Du hast dich heute nicht viel bewogen. Willst du Spiel starten?",
                                         () =>
                                     MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
             }
             else
             {
-                msg = new NotifyMessage("Images/BlueSkin.png", "Blue Skin Title", "Blue Skin has been chosen.",
+               /* msg = new NotifyMessage("Images/BlueSkin.png", "Blue Skin Title", "Blue Skin has been chosen.",
                     () =>
-                        MessageBox.Show("Blue Skin has been chosen.", "Blue Skin", MessageBoxButton.OK));
+                        MessageBox.Show("Blue Skin has been chosen.", "Blue Skin", MessageBoxButton.OK));*/
             }
 
             notifyMessageController.EnqueueMessage(msg);
