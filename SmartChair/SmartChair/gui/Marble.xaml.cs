@@ -78,11 +78,11 @@ namespace SmartChair.gui
             HwndSource hwnd = PresentationSource.FromDependencyObject(this) as HwndSource;          
 
             SetParent(p.MainWindowHandle.ToInt32(), hwnd.Handle.ToInt32());
-            ResizeGoogleControl(p.MainWindowHandle.ToInt32());
+            ResizeUnityControl(p.MainWindowHandle.ToInt32());
 
         }
 
-        private void ResizeGoogleControl(int handle)
+        private void ResizeUnityControl(int handle)
         {
             SendMessage(handle, WM_COMMAND, WM_PAINT, 0);
             PostMessage(handle, WM_QT_PAINT, 0, 0);
