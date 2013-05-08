@@ -7,12 +7,13 @@
       d:DesignHeight="300" d:DesignWidth="300"
       xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
       xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+
     <StackPanel>
         <StackPanel Orientation="Horizontal" >
             <DatePicker Name="dp1" Width="140" Height="25" Margin="10,0"/>
             <DatePicker Name="dp2" Width="140" Height="25"/>
         </StackPanel>
-            <chartingToolkit:Chart Name="lineChart" Height="500" BorderThickness="0" >
+            <chartingToolkit:Chart Name="lineChart" BorderThickness="0" Height="450" >
                 <chartingToolkit:Chart.LegendStyle>
                     <Style TargetType="datavis:Legend">
                         <Setter Property="Width" Value="0" />

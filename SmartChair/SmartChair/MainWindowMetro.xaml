@@ -9,7 +9,7 @@
     Title="Smart Chair"
     WindowStartupLocation="CenterScreen"
     Icon="images/report.ico"
-    ResizeMode="NoResize">
+    ResizeMode="NoResize" Closing="MetroWindow_Closing">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -44,8 +44,6 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
     <Grid>
-        <TabControl x:Name="tabControl" SelectionChanged="TabControl_SelectionChanged">
-         
-        </TabControl>
+        <TabControl x:Name="tabControl" SelectionChanged="TabControl_SelectionChanged"/>
     </Grid>
 </Controls:MetroWindow>

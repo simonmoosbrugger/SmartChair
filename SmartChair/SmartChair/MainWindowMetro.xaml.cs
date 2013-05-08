@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SmartChair.model;
+using System.Diagnostics;
 
 namespace SmartChair
 {
@@ -50,6 +51,14 @@ namespace SmartChair
             if (settings.ShowDialog() == true)
             {
 
+            }
+        }
+
+        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            foreach (Process p in Process.GetProcessesByName("marble"))
+            {
+                p.Kill();
             }
         }
     }

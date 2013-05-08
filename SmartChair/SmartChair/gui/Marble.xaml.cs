@@ -87,6 +87,18 @@ namespace SmartChair.gui
             SendMessage(handle, WM_COMMAND, WM_PAINT, 0);
             PostMessage(handle, WM_QT_PAINT, 0, 0);
 
+            /*
+             *   SetWindowPos(
+            handle,
+            HWND_TOP,
+            1,
+            85,
+            1248,
+            594,
+            SWP_FRAMECHANGED
+            );
+             */
+
             SetWindowPos(
             handle,
             HWND_TOP,
