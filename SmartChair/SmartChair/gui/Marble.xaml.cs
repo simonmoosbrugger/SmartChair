@@ -74,7 +74,7 @@ namespace SmartChair.gui
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Process p = Process.Start(@"marble.exe", "-popupwindow");
-            Thread.Sleep(500); // Allow the process to open it's window
+            Thread.Sleep(800); // Allow the process to open it's window
             HwndSource hwnd = PresentationSource.FromDependencyObject(this) as HwndSource;          
 
             SetParent(p.MainWindowHandle.ToInt32(), hwnd.Handle.ToInt32());

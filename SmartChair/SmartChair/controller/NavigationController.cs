@@ -16,13 +16,20 @@ namespace SmartChair.controller
         private DataController _dataController;
         private Weightcontrol _wc;
         private PageExtended _lastPage;
+
+
+        //Menu Tabs
         TabItem _weightTab;
+        TabItem _movementTab;
         TabItem _cogTab;
         TabItem _marbleTab;
 
+
+        //SettingsTabs
         TabItem _weightTabSettings;
         TabItem _cogTabSettings;
         TabItem _marbleTabSettings;
+        TabItem _movementTabSettings;
 
 
         public void InitTabs(TabControl tabControl)
@@ -33,9 +40,13 @@ namespace SmartChair.controller
             _cogTab.Header = "Center of Gravity";
             _marbleTab = new TabItem();
             _marbleTab.Header = "Marble";
+            _movementTab = new TabItem();
+            _movementTab.Header = "Movement";
             tabControl.Items.Add(_weightTab);
+            tabControl.Items.Add(_movementTab);
             tabControl.Items.Add(_cogTab);
             tabControl.Items.Add(_marbleTab);
+
         }
 
         public void InitSettingsTabs(TabControl tabControl)
@@ -46,7 +57,10 @@ namespace SmartChair.controller
             _cogTabSettings.Header = "Center of Gravity";
             _marbleTabSettings = new TabItem();
             _marbleTabSettings.Header = "Marble";
+            _movementTabSettings = new TabItem();
+            _movementTabSettings.Header = "Movement";
             tabControl.Items.Add(_weightTabSettings);
+            tabControl.Items.Add(_movementTabSettings);
             tabControl.Items.Add(_cogTabSettings);
             tabControl.Items.Add(_marbleTabSettings);
         }
@@ -58,24 +72,32 @@ namespace SmartChair.controller
             _dataController.AddSensorDataListener(_wc);
         }
 
-        public void navigateCOG(Frame _frame)
+        public void navigateCOG(Frame frame)
         {
             removeListener();
-
             CenterGravity cog = new CenterGravity();
             _dataController.AddSensorDataListener(cog);
             _cogTab.Content = cog;
-            _frame.Navigate(cog);
+            frame.Navigate(cog);
             _lastPage = cog;
         }
 
-        public void navigateWeight(Frame _frame)
+        public void navigateWeight(Frame frame)
         {
             removeListener();
-            _frame.Navigate(_wc);
+            frame.Navigate(_wc);
             _lastPage = _wc;
         }
-       
+
+        public void navigateMovement(Frame frame)
+        {
+            removeListener();
+            Movement movement = new Movement();
+            _movementTab.Content = movement;
+            frame.Navigate(movement);
+            _lastPage = movement;
+        }
+
 
         private void removeListener()
         {
@@ -106,9 +128,12 @@ namespace SmartChair.controller
             {
                 navigateWeight(f);
             }
-            else if(ti.Equals(_cogTab))
+            else if (ti.Equals(_movementTab))
             {
-                
+                navigateMovement(f);
+            }
+            else if (ti.Equals(_cogTab))
+            {
                 navigateCOG(f);
             }
             else if (ti.Equals(_marbleTab))
@@ -117,7 +142,7 @@ namespace SmartChair.controller
                 Marble mb = new Marble();
                 f.Navigate(mb);
                 _lastPage = mb;
-                
+
 
                 //NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
                 //                        () =>
@@ -145,7 +170,7 @@ namespace SmartChair.controller
             }
             else if (ti.Equals(_marbleTabSettings))
             {
-                
+
             }
 
             ti.Content = f;

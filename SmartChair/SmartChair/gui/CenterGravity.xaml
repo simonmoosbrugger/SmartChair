@@ -4,22 +4,40 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+    xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
     mc:Ignorable="d" 
-    d:DesignHeight="600" 
-    d:DesignWidth="1250"
 	Title="CenterGravity"
     >
-
     <Grid>
-        <Rectangle
-            Width="600"
-            Height="600"
-            Fill="White"
-            Canvas.Left="10"
-            Canvas.Top="25" 
-            />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
-        <Line
+
+        <StackPanel Grid.Column="0">
+            <StackPanel Orientation="Horizontal" >
+                <DatePicker Name="dp1" Width="140" Height="25" Margin="10,0"/>
+            </StackPanel>
+            <chartingToolkit:Chart Name="lineChart" BorderThickness="0" Height="450" Width="450" >
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="datavis:Legend">
+                        <Setter Property="Width" Value="0" />
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+                <chartingToolkit:LineSeries  
+                    DependentValuePath="Value" 
+		            IndependentValuePath="Key" 
+                    ItemsSource="{Binding}" 
+		            IsSelectionEnabled="True" />
+            </chartingToolkit:Chart>
+        </StackPanel>
+
+        <Grid Grid.Column="1" >
+
+
+            <Line
             X1="625" 
             Y1="0"
             X2="625"
@@ -28,7 +46,7 @@
             StrokeThickness="4" 
             />
 
-        <Line
+            <Line
             X1="325" 
             Y1="300"
             X2="925"
@@ -37,7 +55,7 @@
             StrokeThickness="4" 
             />
 
-        <Line
+            <Line
             x:Name="CenterPoint"
             X1="635" 
             Y1="300"
@@ -46,7 +64,7 @@
             Stroke="Red"
             StrokeThickness="3"
             />
-        <Line
+            <Line
             x:Name="CenterPoint2"
             X1="625" 
             Y1="309"
@@ -55,5 +73,6 @@
             Stroke="Red"
             StrokeThickness="3"
             />
+        </Grid>
     </Grid>
 </Page>

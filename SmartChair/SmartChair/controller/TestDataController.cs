@@ -16,6 +16,11 @@ namespace SmartChair.controller
         private DateTime? _lastBatteryDecrease;
         private float _batteryPercentage = 100;
         private List<SensorData> _data;
+
+        public List<SensorData> Data
+        {
+            get { return _data; }
+        }
         private string _testData = @"controller\TestDataController_data";
 
         public TestDataController()

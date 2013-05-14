@@ -91,6 +91,9 @@
     <Compile Include="gui\Marble.xaml.cs">
       <DependentUpon>Marble.xaml</DependentUpon>
     </Compile>
+    <Compile Include="gui\Movement.xaml.cs">
+      <DependentUpon>Movement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\popup\AnimatedLocation.cs" />
     <Compile Include="gui\popup\DelegateCommand.cs" />
     <Compile Include="gui\popup\NotifyMessage.cs" />
@@ -133,6 +136,10 @@
       <DependentUpon>CenterGravity.xaml</DependentUpon>
     </Compile>
     <Page Include="gui\Marble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\Movement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,6 +1,7 @@
 ﻿using SmartChair.controller;
 using SmartChair.model;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,12 +19,18 @@ namespace SmartChair.gui
 
         public CenterGravity()
         {
-            InitializeComponent();
-            _centerPoint1CoordX = new Point(CenterPoint.X1, CenterPoint.X2);
-            _centerPoint1CoordY = new Point(CenterPoint.Y1, CenterPoint.Y2);
-            _centerPoint2CoordX = new Point(CenterPoint2.X1, CenterPoint2.X2);
-            _centerPoint2CoordY = new Point(CenterPoint2.Y1, CenterPoint2.Y2);
-            MainController.GetInstance.DataController.AddSensorDataListener(this);
+           
+                InitializeComponent();
+                InitChart();
+                _centerPoint1CoordX = new Point(CenterPoint.X1, CenterPoint.X2);
+                _centerPoint1CoordY = new Point(CenterPoint.Y1, CenterPoint.Y2);
+                _centerPoint2CoordX = new Point(CenterPoint2.X1, CenterPoint2.X2);
+                _centerPoint2CoordY = new Point(CenterPoint2.Y1, CenterPoint2.Y2);
+                MainController.GetInstance.DataController.AddSensorDataListener(this);
+
+           
+           
+
         }
 
         public void SensorDataUpdated(model.SensorData data)
@@ -50,6 +57,31 @@ namespace SmartChair.gui
                     }
                 }
             ));
+        }
+
+        void InitChart()
+        {
+            List<KeyValuePair<DateTime, double>> source = new List<KeyValuePair<DateTime, double>>();
+            TestDataController controller = (TestDataController)MainController.GetInstance.DataController;
+            int i = 0;
+            DateTime time = DateTime.Now;
+
+            foreach (SensorData data in controller.Data)
+            {
+                if (i == 100)
+                {
+                    break;
+                }
+                time = time.AddSeconds(5);
+                source.Add(new KeyValuePair<DateTime, double>(time, GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
+                i++;
+            }
+            lineChart.DataContext = source;
+        }
+
+        double GetDistanceBetweenPoints(double x, double y)
+        {
+            return Math.Sqrt(Math.Pow((0 - x), 2d) + Math.Pow((0 - y), 2d));
         }
 
         public bool RemoveListener()
