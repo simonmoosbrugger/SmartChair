@@ -25,6 +25,34 @@ namespace SmartChair.gui
         public Movement()
         {
             InitializeComponent();
+            dp1.SelectedDate = DateTime.Now.AddDays(-14);
+            dp2.SelectedDate = DateTime.Now;
+
+            dp1.SelectedDateChanged += dp1_SelectedDateChanged;
+            dp2.SelectedDateChanged += dp2_SelectedDateChanged;
+
+            updateChart();
+        }
+
+        private void dp2_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dp1.SelectedDate.Value > dp2.SelectedDate.Value)
+            {
+                dp1.SelectedDate = dp2.SelectedDate.Value.AddDays(-14);
+            }
+            dp1.DisplayDateEnd = dp2.SelectedDate;
+            updateChart();
+        }
+
+        private void dp1_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            updateChart();
+        }
+
+        public void updateChart()
+        {
+            //TODO: Insert Values for Movement - Chart
+
         }
 
         
