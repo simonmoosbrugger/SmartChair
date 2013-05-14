@@ -87,6 +87,18 @@
     <Compile Include="gui\CogSettings.xaml.cs">
       <DependentUpon>CogSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="gui\controls\cog.xaml.cs">
+      <DependentUpon>cog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\controls\popup\AnimatedLocation.cs" />
+    <Compile Include="gui\controls\popup\DelegateCommand.cs" />
+    <Compile Include="gui\controls\popup\NotifyMessage.cs" />
+    <Compile Include="gui\controls\popup\NotifyMessageManager.cs" />
+    <Compile Include="gui\controls\popup\NotifyMessageViewModel.cs" />
+    <Compile Include="gui\controls\popup\NotifyMessageWindow.xaml.cs">
+      <DependentUpon>NotifyMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\controls\popup\Screen.cs" />
     <Compile Include="gui\ExtendedPage.cs" />
     <Compile Include="gui\Marble.xaml.cs">
       <DependentUpon>Marble.xaml</DependentUpon>
@@ -94,15 +106,6 @@
     <Compile Include="gui\Movement.xaml.cs">
       <DependentUpon>Movement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="gui\popup\AnimatedLocation.cs" />
-    <Compile Include="gui\popup\DelegateCommand.cs" />
-    <Compile Include="gui\popup\NotifyMessage.cs" />
-    <Compile Include="gui\popup\NotifyMessageManager.cs" />
-    <Compile Include="gui\popup\NotifyMessageViewModel.cs" />
-    <Compile Include="gui\popup\NotifyMessageWindow.xaml.cs">
-      <DependentUpon>NotifyMessageWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="gui\popup\Screen.cs" />
     <Compile Include="gui\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -135,6 +138,14 @@
     <Compile Include="gui\CenterGravity.xaml.cs">
       <DependentUpon>CenterGravity.xaml</DependentUpon>
     </Compile>
+    <Page Include="gui\controls\cog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="gui\controls\popup\NotifyMessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="gui\Marble.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,10 +153,6 @@
     <Page Include="gui\Movement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="gui\popup\NotifyMessageWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="gui\CogSettings.xaml">
       <SubType>Designer</SubType>

@@ -1,4 +1,4 @@
-﻿using SmartChair.gui.popup;
+﻿
 using SmartChair.db;
 using SmartChair.gui;
 using SmartChair.model;
@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using SmartChair.gui.controls.popup;
 
 namespace SmartChair.controller
 {
