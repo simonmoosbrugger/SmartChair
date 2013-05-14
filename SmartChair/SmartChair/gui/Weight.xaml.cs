@@ -74,6 +74,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
+            //TODO: Sensordaten in DB schreiben
 
         }
 
