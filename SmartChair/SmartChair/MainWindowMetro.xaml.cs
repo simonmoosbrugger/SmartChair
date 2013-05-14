@@ -24,6 +24,11 @@ namespace SmartChair
     /// </summary>
     public partial class MainWindowMetro : MetroWindow
     {
+        //TODO: Sensordaten sammeln für verschiedene Szenarien (arbeiten, lesen,...)
+        //TODO: COG Diagramm laufendes update
+        //TODO: Movement = Center of Gravity über längeren Zeitraum - implementieren Diagramm wie bei Gewicht
+
+
         MainController _mc;
         GameController _gc;
 

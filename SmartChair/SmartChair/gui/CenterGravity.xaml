@@ -38,18 +38,18 @@
 
 
             <Line
-            X1="625" 
+            X1="325" 
             Y1="0"
-            X2="625"
+            X2="325"
             Y2="600"
             Stroke="Black"
             StrokeThickness="4" 
             />
 
             <Line
-            X1="325" 
+            X1="0" 
             Y1="300"
-            X2="925"
+            X2="600"
             Y2="300"
             Stroke="Black"
             StrokeThickness="4" 
@@ -57,18 +57,18 @@
 
             <Line
             x:Name="CenterPoint"
-            X1="635" 
+            X1="335" 
             Y1="300"
-            X2="616"
+            X2="316"
             Y2="300"
             Stroke="Red"
             StrokeThickness="3"
             />
             <Line
             x:Name="CenterPoint2"
-            X1="625" 
+            X1="325" 
             Y1="309"
-            X2="625"
+            X2="325"
             Y2="291"
             Stroke="Red"
             StrokeThickness="3"
