@@ -122,6 +122,7 @@
     <Compile Include="gui\Weight.xaml.cs">
       <DependentUpon>Weight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="util\PointDistance.cs" />
     <Page Include="gui\CenterGravity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

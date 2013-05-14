@@ -57,7 +57,6 @@ namespace SmartChair.gui
 
         private void updateChart()
         {
-            
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
             DataTable dt = MainController.GetInstance.DbController.Execute("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.GetInstance.CurrentPerson.ID + ";");
@@ -72,15 +71,14 @@ namespace SmartChair.gui
             lineChart.DataContext = values;
         }
 
-        public void SensorDataUpdated(model.SensorData data)
-        {
-            //TODO: Sensordaten in DB schreiben
-
-        }
-
         public bool RemoveListener()
         {
             return false;
+        }
+
+        public void SensorDataUpdated(model.SensorData data)
+        {
+            //TODO: save weight to db
         }
     }
 }

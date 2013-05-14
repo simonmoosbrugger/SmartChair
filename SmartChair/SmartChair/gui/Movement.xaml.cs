@@ -1,7 +1,9 @@
 ﻿using SmartChair.controller;
 using SmartChair.model;
+using SmartChair.util;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,11 +53,21 @@ namespace SmartChair.gui
 
         public void updateChart()
         {
-            //TODO: Insert Values for Movement - Chart
+            string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
+            string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
+            DataTable dt = MainController.GetInstance.DbController.Execute("SELECT * FROM CenterOfGravityData WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.GetInstance.CurrentPerson.ID + ";");
+
+            List<KeyValuePair<DateTime, double>> values = new List<KeyValuePair<DateTime, double>>();
+            foreach (DataRow row in dt.Rows)
+            {
+                DateTime date = DateTimeParser.getDateTimeFromSQLiteString(row["timestamp"].ToString());
+                double x = (double)row["X"];
+                double y = (double)row["Y"];
+                values.Add(new KeyValuePair<DateTime, double>(date, PointDistance.GetDistanceBetweenPoints(x,y)));
+            }
+            lineChart.DataContext = values;
 
         }
-
-        
 
         public bool RemoveListener()
         {
