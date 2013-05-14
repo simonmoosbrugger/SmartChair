@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace SmartChair.gui.popup
+namespace SmartChair.gui.controls.popup
 {
     public class NotifyMessage
     {

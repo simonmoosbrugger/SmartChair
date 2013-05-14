@@ -1,4 +1,4 @@
-﻿<Window x:Class="SmartChair.gui.popup.NotifyMessageWindow" 
+﻿<Window x:Class="SmartChair.gui.controls.popup.NotifyMessageWindow" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
@@ -48,6 +48,7 @@
             <TextBlock Grid.Row="0" Style="{StaticResource headerTextStyle}"    Text="{Binding Message.HeaderText}"></TextBlock>
             <TextBlock Grid.Row="1" Style="{StaticResource bodyTextStyle}"      Text="{Binding Message.BodyText}"></TextBlock>
         </Grid>
+        
         <Image Source="{Binding Message.SkinName}" Stretch="Fill" />
     </Grid>
     <i:Interaction.Triggers>

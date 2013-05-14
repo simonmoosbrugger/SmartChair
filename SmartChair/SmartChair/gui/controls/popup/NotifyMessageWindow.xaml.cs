@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SmartChair.gui.popup
+namespace SmartChair.gui.controls.popup
 {
     /// <summary>
     /// Interaction logic for NotifyMessageWindow.xaml
@@ -22,5 +22,6 @@ namespace SmartChair.gui.popup
         {
             InitializeComponent();
         }
+        //TODO: Skin als Resource einbinden
     }
 }

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Collections.Generic;
 
-namespace SmartChair.gui.popup
+namespace SmartChair.gui.controls.popup
 {
     public static class Screen
     {
