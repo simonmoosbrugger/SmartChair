@@ -87,6 +87,7 @@ namespace SmartChair.db
             }
             sb.Remove(sb.Length - 1, 1);
             sb.Append(")");
+            Execute(sb.ToString());
         }
 
         public void Update()

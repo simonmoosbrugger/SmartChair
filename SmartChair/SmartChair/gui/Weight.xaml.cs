@@ -78,7 +78,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
-            //TODO: save weight to db
+           //TODO: Save weight to db
         }
     }
 }

@@ -7,6 +7,13 @@ namespace SmartChair.model
     {
         private float _bottomLeft, _bottomoRight, _topLeft, _topRight, _weightKg;
         private CenterOfGravity _cog;
+        private DateTime _date;
+
+        public DateTime Date
+        {
+            get { return _date; }
+            set { _date = value; }
+        }
 
         public CenterOfGravity Cog
         {
@@ -52,6 +59,7 @@ namespace SmartChair.model
             _topRight = tR;
             _weightKg = wKg;
             _cog = cog;
+            _date = DateTime.Now;
         }
 
         [Serializable()]

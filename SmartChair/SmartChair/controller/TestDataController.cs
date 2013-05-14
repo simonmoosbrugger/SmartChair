@@ -106,8 +106,10 @@ namespace SmartChair.controller
             {
                 foreach (SensorData data in _data)
                 {
-                    SendSensorData(data);
                     DateTime now = DateTime.Now;
+                    data.Date = now;
+                    SendSensorData(data);
+                 
                     if (_lastBatteryDecrease == null)
                     {
                         _lastBatteryDecrease = now;
