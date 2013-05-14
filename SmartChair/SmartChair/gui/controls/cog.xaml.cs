@@ -20,7 +20,7 @@ namespace SmartChair.gui.controls
     /// </summary>
     public partial class cog : UserControl
     {
-        private double _maxValue;
+        private double _maxValue = 5;
         private Point _centerPoint1CoordX;
         private Point _centerPoint1CoordY;
         private Point _centerPoint2CoordX;
@@ -32,6 +32,8 @@ namespace SmartChair.gui.controls
             set { _maxValue = value; }
         }
 
+        private double midX, midY;
+
         public cog(double height, double width)
         {
             InitializeComponent();
@@ -39,8 +41,8 @@ namespace SmartChair.gui.controls
             this.Height = height;
             this.Width = width;
 
-            double midX = this.Width / 2;
-            double midY = this.Height / 2;
+            midX = this.Width / 2;
+            midY = this.Height / 2;
             
             L1.Y1 = 0;
             L1.Y2 = this.Height;
@@ -70,6 +72,8 @@ namespace SmartChair.gui.controls
 
         public void setPoint(double x, double y)
         {
+            x = midX * x / _maxValue;
+            y = midY * y / _maxValue;
             CenterPoint.X1 = _centerPoint1CoordX.X + x;
             CenterPoint.X2 = _centerPoint1CoordX.Y + x;
             CenterPoint.Y1 = _centerPoint1CoordY.X + y;
