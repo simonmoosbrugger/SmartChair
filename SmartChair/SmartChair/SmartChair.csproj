@@ -84,6 +84,7 @@
     <Compile Include="controller\GameController.cs" />
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
+    <Compile Include="db\DbUtil.cs" />
     <Compile Include="gui\CogSettings.xaml.cs">
       <DependentUpon>CogSettings.xaml</DependentUpon>
     </Compile>

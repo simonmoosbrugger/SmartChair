@@ -74,15 +74,16 @@ namespace SmartChair.db
             sb.Remove(sb.Length - 1, 1);
             sb.Append(") VALUES (");
 
-            foreach (string value in Values)
+            foreach (object value in Values)
             {
-                if (value.GetType() == typeof(string))
+                if (value.GetType() == typeof(double) || value.GetType() == typeof(int) || value == typeof(float))
                 {
-                    sb.Append("'" + value + "',");
+                    sb.Append(value + ",");                    
                 }
                 else
                 {
-                    sb.Append(value + ",");
+                    sb.Append("'" + value + "',");
+                    
                 }
             }
             sb.Remove(sb.Length - 1, 1);

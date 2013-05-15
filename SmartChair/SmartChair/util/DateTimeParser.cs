@@ -9,5 +9,10 @@ namespace SmartChair.controller
             CultureInfo provider = CultureInfo.InvariantCulture;
             return DateTime.ParseExact(dt, "MM.dd.yyyy HH:mm:ss", provider);
         }
+
+        public static string getSQLiteSTringFromDateTime(DateTime dt)
+        {
+            return dt.ToString("MM.dd.yyyy HH:mm:ss");
+        }
     }
 }
