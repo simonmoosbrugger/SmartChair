@@ -51,7 +51,8 @@ namespace SmartChair.gui
                             DependentValuePath = "Value",
                             IndependentValuePath = "Key",
                             IsSelectionEnabled = true,
-                            ItemsSource = temp
+                            ItemsSource = temp,
+                            //TODO color
                         };
                         lineChart.Series.Clear();
                         lineChart.Series.Add(ls);
