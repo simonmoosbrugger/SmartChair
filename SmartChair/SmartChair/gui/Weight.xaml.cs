@@ -81,6 +81,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
+            //TODO: Add Settings for Timespan => Save DB
             if ((DateTime.Now - timer).TotalMinutes >= 30)
             {
                 List<object> values = new List<object>();
