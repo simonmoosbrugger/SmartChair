@@ -14,6 +14,7 @@ namespace SmartChair.controller
         private List<BatteryStatListener> _batteryStatListeners;
         protected DbController _dbController;
         object _lock = new object();
+        object _lock_bat = new object();
 
         public DataController()
         {
@@ -39,12 +40,18 @@ namespace SmartChair.controller
 
         public void AddBatteryStatListener(BatteryStatListener listener)
         {
-            _batteryStatListeners.Add(listener);
+            lock (_lock_bat)
+            {
+                _batteryStatListeners.Add(listener);
+            }
         }
 
         public void RemoveBatteryStatListener(BatteryStatListener listener)
         {
-            _batteryStatListeners.Remove(listener);
+            lock (_lock_bat)
+            {
+                _batteryStatListeners.Remove(listener);
+            }
         }
 
         public void SendSensorData(SensorData data)
@@ -60,9 +67,12 @@ namespace SmartChair.controller
 
         public void SendBatteryStat(float value)
         {
-            foreach (BatteryStatListener listener in _batteryStatListeners)
+            lock (_lock_bat)
             {
-                listener.BatteryStatUpdated(value);
+                foreach (BatteryStatListener listener in _batteryStatListeners)
+                {
+                    listener.BatteryStatUpdated(value);
+                }
             }
         }
 
