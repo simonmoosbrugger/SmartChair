@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.DataVisualization.Charting;
+using System.Windows.Data;
 using System.Windows.Threading;
 
 namespace SmartChair.gui
@@ -17,58 +19,56 @@ namespace SmartChair.gui
     public partial class CenterGravity : Page, PageExtended, SmartChair.controller.DataController.SensorDataListener
     {
         private cog _cog;
-        private List<KeyValuePair<DateTime, double>> source = new List<KeyValuePair<DateTime, double>>();
+        private DateTime dtLast = new DateTime();
 
         public CenterGravity()
         {
             _cog = new cog(400, 400);
             InitializeComponent();
-            //InitChart();
+            source = new List<KeyValuePair<DateTime, double>>();
             MainController.GetInstance.DataController.AddSensorDataListener(this);
             coglive.Children.Add(_cog);
-            lineChart.DataContext = source;
-
-           
         }
 
         public void SensorDataUpdated(model.SensorData data)
         {
-            //TODO: Save COG to db
             double x = data.Cog.X;
             double y = data.Cog.Y;
-            source.Add(new KeyValuePair<DateTime, double>(data.Date, PointDistance.GetDistanceBetweenPoints(x, y)));
+
+            source.Add(new KeyValuePair<DateTime, double>(DateTime.Now, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
+
+            KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[source.Count];
+            source.CopyTo(temp);
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+            {
+                try
                 {
-                    try
+                    if ((DateTime.Now - dtLast).TotalSeconds > 1)
                     {
-                        _cog.setPoint(x, y);
+                        LineSeries ls = new LineSeries()
+                        {
+                            DependentValuePath = "Value",
+                            IndependentValuePath = "Key",
+                            IsSelectionEnabled = true,
+                            ItemsSource = temp
+                        };
+                        lineChart.Series.Clear();
+                        lineChart.Series.Add(ls);
+                        dtLast = DateTime.Now;
                     }
-                    catch (Exception)
-                    {
 
-                    }
+                    _cog.setPoint(x, y);
                 }
+                catch (Exception)
+                {
+
+                }
+            }
             ));
         }
 
-        void InitChart()
-        {
-            TestDataController controller = (TestDataController)MainController.GetInstance.DataController;
-            int i = 0;
-            DateTime time = DateTime.Now;
-
-            foreach (SensorData data in controller.Data)
-            {
-                if (i == 100)
-                {
-                    break;
-                }
-                time = time.AddSeconds(5);
-                source.Add(new KeyValuePair<DateTime, double>(time, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
-                i++;
-            }
-        }
+        List<KeyValuePair<DateTime, double>> source;
 
         public bool RemoveListener()
         {
