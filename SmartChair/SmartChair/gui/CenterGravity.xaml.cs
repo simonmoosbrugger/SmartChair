@@ -30,33 +30,47 @@ namespace SmartChair.gui
             coglive.Children.Add(_cog);
         }
 
+        object _lock = new object();
+
         public void SensorDataUpdated(model.SensorData data)
         {
             double x = data.Cog.X;
             double y = data.Cog.Y;
+            KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[0];
+            bool refresh = false;
 
-            source.Add(new KeyValuePair<DateTime, double>(DateTime.Now, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
+            if ((DateTime.Now - dtLast).TotalSeconds > 1)
+            {
+                lock (_lock)
+                {
+                    source.Add(new KeyValuePair<DateTime, double>(DateTime.Now, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
 
-            KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[source.Count];
-            source.CopyTo(temp);
+                    temp = new KeyValuePair<DateTime, double>[source.Count];
+                    source.CopyTo(temp);
+                    refresh = true;
+                }
+            }
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 try
                 {
-                    if ((DateTime.Now - dtLast).TotalSeconds > 1)
+                    if (refresh)
                     {
-                        LineSeries ls = new LineSeries()
+                        lock (_lock)
                         {
-                            DependentValuePath = "Value",
-                            IndependentValuePath = "Key",
-                            IsSelectionEnabled = true,
-                            ItemsSource = temp,
-                            //TODO color
-                        };
-                        lineChart.Series.Clear();
-                        lineChart.Series.Add(ls);
+                            LineSeries ls = new LineSeries()
+                            {
+                                DependentValuePath = "Value",
+                                IndependentValuePath = "Key",
+                                IsSelectionEnabled = true,
+                                ItemsSource = temp
+                            };
+                            lineChart.Series.Clear();
+                            lineChart.Series.Add(ls);
+                        }
                         dtLast = DateTime.Now;
+                        refresh = false;
                     }
 
                     _cog.setPoint(x, y);
