@@ -1,4 +1,5 @@
 ﻿using SmartChair.controller;
+using SmartChair.db;
 using SmartChair.gui.controls;
 using SmartChair.model;
 using SmartChair.util;
@@ -35,7 +36,6 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
-            //TODO: Write sensor data cog to db
             double x = data.Cog.X;
             double y = data.Cog.Y;
             KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[0];
@@ -43,6 +43,13 @@ namespace SmartChair.gui
 
             if ((DateTime.Now - dtLast).TotalSeconds > 1)
             {
+                List<object> values = new List<object>();
+                values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));
+                values.Add(x);
+                values.Add(y);
+                values.Add(MainController.GetInstance.CurrentPerson.ID);
+                MainController.GetInstance.DbController.Insert("CenterOfGravityData", DbUtil.GetColumnNames("CenterOfGravityData"), values);
+
                 lock (_lock)
                 {
                     source.Add(new KeyValuePair<DateTime, double>(DateTime.Now, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));

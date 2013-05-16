@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SmartChair.model;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace SmartChair
 {
@@ -32,6 +33,9 @@ namespace SmartChair
         public MainWindowMetro()
         {
             InitializeComponent();
+            CultureInfo culture;
+            culture = CultureInfo.CreateSpecificCulture("en-US");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
             _mc = MainController.GetInstance;
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);
@@ -43,7 +47,7 @@ namespace SmartChair
         {
             TabItem ti = (TabItem)e.AddedItems[0];
             _mc.NavigationController.Navigate(ti);
-            
+
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
