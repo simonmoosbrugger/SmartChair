@@ -18,6 +18,7 @@ namespace SmartChair.gui
     /// </summary>
     public partial class CenterGravity : Page, PageExtended, SmartChair.controller.DataController.SensorDataListener
     {
+        //TODO: Show when there is too less movement
         private cog _cog;
         private DateTime dtLast = new DateTime();
 
@@ -34,6 +35,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
+            //TODO: Write sensor data cog to db
             double x = data.Cog.X;
             double y = data.Cog.Y;
             KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[0];
