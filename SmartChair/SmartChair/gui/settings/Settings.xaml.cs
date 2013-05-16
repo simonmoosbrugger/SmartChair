@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SmartChair.gui
+namespace SmartChair.gui.settings
 {
     /// <summary>
     /// Interaktionslogik für Settings.xaml
@@ -25,14 +25,17 @@ namespace SmartChair.gui
         {
             InitializeComponent();
             MainController.GetInstance.NavigationController.InitSettingsTabs(tabControl);
-
-           
         }
 
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TabItem ti = (TabItem)e.AddedItems[0];
             MainController.GetInstance.NavigationController.NavigateSettings(ti);
+        }
+
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 }

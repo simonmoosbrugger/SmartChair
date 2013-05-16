@@ -23,6 +23,17 @@ namespace SmartChair.gui
         public WeightSettings()
         {
             InitializeComponent();
+            TimespanWeightSave.Text = Properties.Settings.Default.TimespanWeightSave.ToString();
+            
+        }
+
+        private void TimespanWeightSave_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox box = (TextBox)sender;
+            if (box.Text != "")
+            {
+                Properties.Settings.Default.TimespanWeightSave = int.Parse(box.Text);
+            }
         }
     }
 }

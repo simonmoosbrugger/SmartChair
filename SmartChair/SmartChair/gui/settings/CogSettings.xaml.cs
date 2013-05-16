@@ -23,6 +23,16 @@ namespace SmartChair.gui
         public CogSettings()
         {
             InitializeComponent();
+            TimespanCogSave.Text = Properties.Settings.Default.TimespanCogSave.ToString();
+        }
+
+        private void TimespanCogSave_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox box = (TextBox)sender;
+            if (box.Text != "")
+            {
+                Properties.Settings.Default.TimespanCogSave = int.Parse(box.Text);
+            }
         }
     }
 }

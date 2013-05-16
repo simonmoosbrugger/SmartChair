@@ -41,7 +41,7 @@ namespace SmartChair.gui
             KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[0];
             bool refresh = false;
 
-            if ((DateTime.Now - dtLast).TotalSeconds > 1)
+            if ((DateTime.Now - dtLast).TotalSeconds > Properties.Settings.Default.TimespanCogSave)
             {
                 List<object> values = new List<object>();
                 values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));

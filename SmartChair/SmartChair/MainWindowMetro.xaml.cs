@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using SmartChair.model;
 using System.Diagnostics;
 using System.Globalization;
+using SmartChair.gui.settings;
 
 namespace SmartChair
 {
@@ -33,8 +34,7 @@ namespace SmartChair
         public MainWindowMetro()
         {
             InitializeComponent();
-            CultureInfo culture;
-            culture = CultureInfo.CreateSpecificCulture("en-US");
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
             CultureInfo.DefaultThreadCurrentCulture = culture;
             _mc = MainController.GetInstance;
             _mc.NavigationController.InitTabs(tabControl);
