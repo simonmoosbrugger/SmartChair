@@ -6,7 +6,7 @@
     xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     mc:Ignorable="d" 
-    Height="200" 
+    Height="400" 
     Width="400"
     WindowStartupLocation="CenterScreen"
     Icon="../../images/report.ico"
@@ -36,6 +36,8 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         
         <Label Grid.Row="0" Grid.Column="0" FontSize="16" VerticalAlignment="Center">First Name</Label>
@@ -47,6 +49,9 @@
         <Button Grid.Column="0" Width="100" Height="25" Grid.Row="2" Name="Register" Content="Register" Click="Register_Click"/>
         <Button Grid.Column="1" Width="100" Height="25" Grid.Row="2" Name="LogIn" Content="Login" Click="LogIn_Click"/>
 
+        <Label Grid.Row="3" Foreground="Red" Grid.ColumnSpan="2" x:Name="ErrorMsg"/>
+        
+        <DataGrid Grid.Row="4" Grid.ColumnSpan="2" x:Name="Users"/>
 
     </Grid> 
 </Controls:MetroWindow>

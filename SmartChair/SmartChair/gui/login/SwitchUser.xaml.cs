@@ -25,6 +25,7 @@ namespace SmartChair.gui.login
         public SwitchUser()
         {
             InitializeComponent();
+            Users.ItemsSource = MainController.GetInstance.PersonController.getPersons();
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
@@ -35,6 +36,10 @@ namespace SmartChair.gui.login
                 MainController.GetInstance.PersonController.CurrentPerson = MainController.GetInstance.PersonController.GetPersonByName(FirstName.Text, LastName.Text);
                 this.Close();
             }
+            else
+            {
+                ErrorMsg.Content = "User already exists";
+            }
         }
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
@@ -42,8 +47,12 @@ namespace SmartChair.gui.login
             if (MainController.GetInstance.PersonController.UserExists(FirstName.Text, LastName.Text))
             {
                 MainController.GetInstance.PersonController.CurrentPerson = MainController.GetInstance.PersonController.GetPersonByName(FirstName.Text, LastName.Text);
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                ErrorMsg.Content = "User already exists";
+            }
         }
     }
 }

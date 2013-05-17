@@ -78,7 +78,16 @@ namespace SmartChair.controller
         {
             string[] arr = windwosUsername.Split(' ');
             string fname = arr[0];
-            string lname = arr[1];
+            string lname;
+            if (arr.Count<string>() < 2)
+            {
+                lname = "";
+            }
+            else
+            {
+                lname = arr[1];
+            }
+
             foreach (Person p in getPersons())
             {
                 if (p.Firstname == fname && p.Lastname == lname)
@@ -106,7 +115,7 @@ namespace SmartChair.controller
         {
             string[] split = WindowsUserName.Split(' ');
             return split[0];
-           
+
         }
 
         public string GetLastName(string WindowsUserName)
