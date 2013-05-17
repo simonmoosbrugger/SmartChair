@@ -7,7 +7,9 @@
     Height="680" 
     Width="1250" 
     Title="Smart Chair"
-    WindowStartupLocation="CenterScreen"
+    WindowStartupLocation="Manual" 
+    Top="0"
+    Left="0"
     Icon="images/report.ico"
     ResizeMode="NoResize" Closing="MetroWindow_Closing">
 

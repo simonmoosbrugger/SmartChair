@@ -5,11 +5,13 @@ using SmartChair.model;
 using SmartChair.util;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.DataVisualization.Charting;
 using System.Windows.Data;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.Integration;
 using System.Windows.Threading;
 
 namespace SmartChair.gui
@@ -21,15 +23,37 @@ namespace SmartChair.gui
     {
         //TODO: Show when there is too less movement
         private cog _cog;
-        private DateTime dtLast = new DateTime();
+        private DateTime dtLast = new DateTime(), _dtStart;
+        Series _serie;
+        private bool _first;
 
         public CenterGravity()
         {
-            _cog = new cog(400, 400);
             InitializeComponent();
-            source = new List<KeyValuePair<DateTime, double>>();
-            MainController.GetInstance.DataController.AddSensorDataListener(this);
+
+            Chart chart = new Chart();
+            ChartArea area = new ChartArea();
+            area.AxisX.Title = "t";
+            area.AxisX.Minimum = 0;
+            area.AxisY.Title = "Movement";
+            chart.ChartAreas.Add(area);
+            _serie = new Series();
+            _serie.ChartType = SeriesChartType.Line;
+            _serie.MarkerStyle = MarkerStyle.Diamond;
+            _serie.MarkerSize = 9;
+            _serie.Color = Color.LimeGreen;
+            chart.Series.Add(_serie);
+
+            WindowsFormsHost host = new WindowsFormsHost();
+            host.Child = chart;
+            movlive.Children.Add(host);
+
+            _cog = new cog(400, 400);
             coglive.Children.Add(_cog);
+
+            _first = true;
+            
+            MainController.GetInstance.DataController.AddSensorDataListener(this);
         }
 
         object _lock = new object();
@@ -38,8 +62,6 @@ namespace SmartChair.gui
         {
             double x = data.Cog.X;
             double y = data.Cog.Y;
-            KeyValuePair<DateTime, double>[] temp = new KeyValuePair<DateTime, double>[0];
-            bool refresh = false;
 
             if ((DateTime.Now - dtLast).TotalSeconds > 1)
             {
@@ -50,38 +72,32 @@ namespace SmartChair.gui
                 values.Add(MainController.GetInstance.CurrentPerson.ID);
                 MainController.GetInstance.DbController.Insert("CenterOfGravityData", DbUtil.GetColumnNames("CenterOfGravityData"), values);
 
-                lock (_lock)
+                Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+        {
+            try
+            {
+                if (_first)
                 {
-                    source.Add(new KeyValuePair<DateTime, double>(DateTime.Now, PointDistance.GetDistanceBetweenPoints(data.Cog.X, data.Cog.Y)));
-
-                    temp = new KeyValuePair<DateTime, double>[source.Count];
-                    source.CopyTo(temp);
-                    refresh = true;
+                    _dtStart = data.Date;
+                    _first = false;
                 }
+
+                _serie.Points.Add(new DataPoint(Math.Round((data.Date - _dtStart).TotalSeconds, 0), PointDistance.GetDistanceBetweenPoints(x, y)));
+            }
+            catch (Exception)
+            {
+
+            }
+        }));
+
+                dtLast = DateTime.Now;
+
             }
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 try
                 {
-                    if (refresh)
-                    {
-                        lock (_lock)
-                        {
-                            LineSeries ls = new LineSeries()
-                            {
-                                DependentValuePath = "Value",
-                                IndependentValuePath = "Key",
-                                IsSelectionEnabled = true,
-                                ItemsSource = temp
-                            };
-                            lineChart.Series.Clear();
-                            lineChart.Series.Add(ls);
-                        }
-                        dtLast = DateTime.Now;
-                        refresh = false;
-                    }
-
                     _cog.setPoint(x, y);
                 }
                 catch (Exception)
@@ -91,8 +107,6 @@ namespace SmartChair.gui
             }
             ));
         }
-
-        List<KeyValuePair<DateTime, double>> source;
 
         public bool RemoveListener()
         {

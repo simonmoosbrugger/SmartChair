@@ -16,23 +16,10 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Grid.Column="0">
-            <StackPanel Orientation="Horizontal" >
-                <DatePicker Name="dp1" Width="140" Height="25" Margin="10,0"/>
-            </StackPanel>
-            <chartingToolkit:Chart Name="lineChart" BorderThickness="0" Height="450" Width="450" >
-                <chartingToolkit:Chart.LegendStyle>
-                    <Style TargetType="datavis:Legend">
-                        <Setter Property="Width" Value="0" />
-                    </Style>
-                </chartingToolkit:Chart.LegendStyle>
-                <chartingToolkit:LineSeries  
-                    DependentValuePath="Value" 
-		            IndependentValuePath="Key" 
-                    ItemsSource="{Binding Path=source, IsAsync=True}" 
-		            IsSelectionEnabled="True" />
-            </chartingToolkit:Chart>
-        </StackPanel>
+        <Grid Name="movlive" Grid.Column="0" >
+
+
+        </Grid>
 
         <Grid Name="coglive" Grid.Column="1" >
 
