@@ -89,7 +89,7 @@
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="db\DbUtil.cs" />
-    <Compile Include="gui\CogSettings.xaml.cs">
+    <Compile Include="gui\settings\CogSettings.xaml.cs">
       <DependentUpon>CogSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\controls\cog.xaml.cs">
@@ -111,10 +111,13 @@
     <Compile Include="gui\Movement.xaml.cs">
       <DependentUpon>Movement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="gui\Settings.xaml.cs">
+    <Compile Include="gui\settings\MovementSettings.xaml.cs">
+      <DependentUpon>MovementSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="gui\settings\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="gui\WeightSettings.xaml.cs">
+    <Compile Include="gui\settings\WeightSettings.xaml.cs">
       <DependentUpon>WeightSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="gui\WindowHost.xaml.cs">
@@ -160,11 +163,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="gui\CogSettings.xaml">
+    <Page Include="gui\settings\CogSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="gui\Settings.xaml">
+    <Page Include="gui\settings\MovementSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gui\settings\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,7 +179,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="gui\WeightSettings.xaml">
+    <Page Include="gui\settings\WeightSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

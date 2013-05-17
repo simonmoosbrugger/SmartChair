@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Diagnostics;
+using SmartChair.gui.settings;
 
 namespace SmartChair.controller
 {
@@ -162,6 +163,11 @@ namespace SmartChair.controller
             {
                 WeightSettings ws = new WeightSettings();
                 f.Content = ws;
+            }
+            else if (ti.Equals(_movementTabSettings))
+            {
+                MovementSettings ms = new MovementSettings();
+                f.Content = ms;
             }
             else if (ti.Equals(_cogTabSettings))
             {

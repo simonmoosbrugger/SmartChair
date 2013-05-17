@@ -63,7 +63,7 @@ namespace SmartChair.gui
             double x = data.Cog.X;
             double y = data.Cog.Y;
 
-            if ((DateTime.Now - dtLast).TotalSeconds > 1)
+            if ((DateTime.Now - dtLast).TotalSeconds > Properties.Settings.Default.TimespanCogSave)
             {
                 List<object> values = new List<object>();
                 values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));

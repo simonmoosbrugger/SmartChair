@@ -76,7 +76,7 @@ namespace SmartChair.db
 
             foreach (object value in Values)
             {
-                if (value.GetType() == typeof(double) || value.GetType() == typeof(int) || value == typeof(float))
+                if (value.GetType() == typeof(double) || value.GetType() == typeof(int))
                 {
                     sb.Append(value + ",");                    
                 }

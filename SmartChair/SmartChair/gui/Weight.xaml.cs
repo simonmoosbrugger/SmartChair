@@ -81,8 +81,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
-            //TODO: Add Settings for Timespan => Save DB
-            if ((DateTime.Now - timer).TotalMinutes >= 30)
+            if ((DateTime.Now - timer).TotalMinutes >= Properties.Settings.Default.TimespanWeightSave)
             {
                 List<object> values = new List<object>();
                 values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));
