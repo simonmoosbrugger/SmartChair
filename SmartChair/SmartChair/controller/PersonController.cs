@@ -43,6 +43,22 @@ namespace SmartChair.controller
             }
         }
 
+        public Person GetPersonByName(string WindowsUserName)
+        {
+            string sql = "SELECT * from Person WHERE Fname = '" + GetFirstname(WindowsUserName) + "' AND Lname='" + GetLastName(WindowsUserName) + "'";
+            DataTable dt = _dbController.Execute(sql);
+            Person p = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                long ID = (long)row["ID"];
+                string fname = row["Fname"].ToString();
+                string lname = row["Lname"].ToString();
+                p = new Person(ID, fname, lname);
+            }
+            return p;
+
+        }
+
         public PersonController(DbController dbController)
         {
             _Columns.Add("Fname");
@@ -56,6 +72,63 @@ namespace SmartChair.controller
             Values.Add(Fname);
             Values.Add(Lname);
             _dbController.Insert("Person", _Columns, Values);
+        }
+
+        public bool UserExists(string windwosUsername)
+        {
+            string[] arr = windwosUsername.Split(' ');
+            string fname = arr[0];
+            string lname = arr[1];
+            foreach (Person p in getPersons())
+            {
+                if (p.Firstname == fname && p.Lastname == lname)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public bool UserExists(string fname, string lname)
+        {
+            foreach (Person p in getPersons())
+            {
+                if (p.Firstname == fname && p.Lastname == lname)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public string GetFirstname(string WindowsUserName)
+        {
+            string[] split = WindowsUserName.Split(' ');
+            return split[0];
+           
+        }
+
+        public string GetLastName(string WindowsUserName)
+        {
+            string[] split = WindowsUserName.Split(' ');
+            return split[1];
+        }
+
+        public Person GetPersonByName(string firstname, string lastname)
+        {
+            string sql = "SELECT * from Person WHERE Fname = '" + firstname + "' AND Lname='" + lastname + "'";
+            DataTable dt = _dbController.Execute(sql);
+            Person p = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                long ID = (long)row["ID"];
+                string fname = row["Fname"].ToString();
+                string lname = row["Lname"].ToString();
+                p = new Person(ID, fname, lname);
+            }
+            return p;
+
         }
     }
 }

@@ -64,6 +64,8 @@ namespace SmartChair.controller
             tabControl.Items.Add(_movementTabSettings);
             tabControl.Items.Add(_cogTabSettings);
             tabControl.Items.Add(_marbleTabSettings);
+            _movementTabSettings.IsEnabled = false;
+            _marbleTabSettings.IsEnabled = false;
         }
 
         public NavigationController(DataController dataController)

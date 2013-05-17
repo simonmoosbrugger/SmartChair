@@ -11,7 +11,7 @@
     Top="0"
     Left="0"
     Icon="images/report.ico"
-    ResizeMode="NoResize" Closing="MetroWindow_Closing">
+    ResizeMode="NoResize" Closing="MetroWindow_Closing" Activated="MetroWindow_Activated">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -36,10 +36,9 @@
                     </Rectangle.Resources>
                 </Rectangle>
                 <Controls:MetroProgressBar Value="50" ToolTip="Batterystatus: 50%"/>
-                <Button>
+                <Button Click="LogIn_Click">
                     <StackPanel Orientation="Horizontal">
-                        <!--<Image Source="" Height="25"/> avatar picture -->
-                        <TextBlock Name="txtName" VerticalAlignment="Center" Margin="5 0 0 0" FontWeight="Bold" Foreground="White"/>
+                        <TextBlock Name="loginName" Text="{Binding}" VerticalAlignment="Center" Margin="5 0 0 0" FontWeight="Bold" Foreground="White"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

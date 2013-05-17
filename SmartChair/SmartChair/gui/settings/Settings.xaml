@@ -8,7 +8,8 @@
     Width="800"
     WindowStartupLocation="CenterScreen"
     ResizeMode="NoResize"
-    Icon="../../images/report.ico" Closed="MetroWindow_Closed"
+    Icon="../../images/report.ico" 
+    Closed="MetroWindow_Closed"
     
     >
     <Window.Resources>

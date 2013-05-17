@@ -15,6 +15,8 @@ namespace SmartChair.controller
     {
         private static MainController _c;
         private PersonController _personController;
+
+     
         private DataController _dataController;
         private DbController _dbController;
         private NavigationController _navigationController;
@@ -26,6 +28,11 @@ namespace SmartChair.controller
             get { return _personController.CurrentPerson; }
         }
 
+        public PersonController PersonController
+        {
+            get { return _personController; }
+            set { _personController = value; }
+        }
         public DataController DataController
         {
             get { return _dataController; }

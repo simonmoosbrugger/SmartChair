@@ -1,0 +1,52 @@
+﻿<Controls:MetroWindow 
+    x:Class="SmartChair.gui.login.SwitchUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    Height="200" 
+    Width="400"
+    WindowStartupLocation="CenterScreen"
+    Icon="../../images/report.ico"
+    ResizeMode="NoResize"
+	Title="">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colours.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Green.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" FontSize="16" VerticalAlignment="Center">First Name</Label>
+        <TextBox Name="FirstName" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" FontSize="16" VerticalAlignment="Center">Last Name</Label>
+        <TextBox Name="LastName" Grid.Row="1" Grid.Column="1" Margin="5"/>
+        
+        <Button Grid.Column="0" Width="100" Height="25" Grid.Row="2" Name="Register" Content="Register" Click="Register_Click"/>
+        <Button Grid.Column="1" Width="100" Height="25" Grid.Row="2" Name="LogIn" Content="Login" Click="LogIn_Click"/>
+
+
+    </Grid> 
+</Controls:MetroWindow>
