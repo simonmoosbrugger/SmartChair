@@ -40,7 +40,16 @@ namespace SmartChair
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);
             Person p = _mc.CurrentPerson;
-            txtName.Text = Environment.UserName;
+            if (_mc.PersonController.UserExists(Environment.UserName))
+            {
+                _mc.PersonController.CurrentPerson = _mc.PersonController.GetPersonByName(Environment.UserName);
+            }
+            else
+            {
+                _mc.PersonController.AddUser(_mc.PersonController.GetFirstname(Environment.UserName), _mc.PersonController.GetLastName(Environment.UserName));
+                _mc.PersonController.CurrentPerson = _mc.PersonController.GetPersonByName(Environment.UserName);
+            }
+            loginName.DataContext = _mc.PersonController.CurrentPerson.ToString();
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,6 +74,17 @@ namespace SmartChair
             {
                 p.Kill();
             }
+        }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            LogIn login = new LogIn();
+            login.Show();
+        }
+
+        private void MetroWindow_Activated(object sender, EventArgs e)
+        {
+            loginName.Text = MainController.GetInstance.PersonController.CurrentPerson.ToString();
         }
     }
 }

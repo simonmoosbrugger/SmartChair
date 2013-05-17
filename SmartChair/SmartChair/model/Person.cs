@@ -45,5 +45,10 @@ namespace SmartChair.model
             _Lname = Lname;
             _ID = ID;
         }
+
+        public override string ToString()
+        {
+            return _Fname + " " + _Lname;
+        }
     }
 }
