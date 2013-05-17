@@ -35,7 +35,9 @@ namespace SmartChair.gui
             ChartArea area = new ChartArea();
             area.AxisX.Title = "t";
             area.AxisX.Minimum = 0;
+            area.AxisX.MajorGrid.LineColor = Color.LightGray;
             area.AxisY.Title = "Movement";
+            area.AxisY.MajorGrid.LineColor = Color.LightGray;
             chart.ChartAreas.Add(area);
             _serie = new Series();
             _serie.ChartType = SeriesChartType.Line;
