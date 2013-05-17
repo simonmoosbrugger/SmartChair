@@ -121,6 +121,11 @@ namespace SmartChair.controller
         public string GetLastName(string WindowsUserName)
         {
             string[] split = WindowsUserName.Split(' ');
+
+            if (split.Count<string>() < 1)
+            {
+                return "";
+            }
             return split[1];
         }
 
