@@ -122,7 +122,7 @@ namespace SmartChair.controller
         {
             string[] split = WindowsUserName.Split(' ');
 
-            if (split.Count<string>() < 1)
+            if (split.Length < 2)
             {
                 return "";
             }
