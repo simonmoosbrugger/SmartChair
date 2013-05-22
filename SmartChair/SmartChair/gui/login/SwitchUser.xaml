@@ -50,8 +50,5 @@
         <Button Grid.Column="1" Width="100" Height="25" Grid.Row="2" Name="LogIn" Content="Login" Click="LogIn_Click"/>
 
         <Label Grid.Row="3" Foreground="Red" Grid.ColumnSpan="2" x:Name="ErrorMsg"/>
-        
-        <DataGrid Grid.Row="4" Grid.ColumnSpan="2" x:Name="Users"/>
-
     </Grid> 
 </Controls:MetroWindow>

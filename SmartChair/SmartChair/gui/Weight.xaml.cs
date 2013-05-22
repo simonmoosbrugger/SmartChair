@@ -58,7 +58,7 @@ namespace SmartChair.gui
             updateChart();
         }
 
-        private void updateChart()
+        public void updateChart()
         {
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";

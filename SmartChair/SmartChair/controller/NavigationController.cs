@@ -88,6 +88,7 @@ namespace SmartChair.controller
         public void navigateWeight(Frame frame)
         {
             removeListener();
+            _wc.updateChart();
             frame.Navigate(_wc);
             _lastPage = _wc;
         }
@@ -97,6 +98,7 @@ namespace SmartChair.controller
             removeListener();
             Movement movement = new Movement();
             _movementTab.Content = movement;
+           // movement.updateChart();
             frame.Navigate(movement);
             _lastPage = movement;
         }
