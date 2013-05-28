@@ -20,7 +20,7 @@ namespace SmartChair.gui.controls
     /// </summary>
     public partial class cog : UserControl
     {
-        private double _maxValue = 5;
+        private double _maxValue = 20;
         private Point _centerPoint1CoordX;
         private Point _centerPoint1CoordY;
         private Point _centerPoint2CoordX;
