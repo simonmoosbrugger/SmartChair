@@ -24,6 +24,7 @@ namespace SmartChair.controller
         TabItem _movementTab;
         TabItem _cogTab;
         TabItem _marbleTab;
+        TabItem _infoTab;
 
 
         //SettingsTabs
@@ -43,10 +44,13 @@ namespace SmartChair.controller
             _marbleTab.Header = "Marble";
             _movementTab = new TabItem();
             _movementTab.Header = "Movement";
+            _infoTab = new TabItem();
+            _infoTab.Header = "Info";
             tabControl.Items.Add(_weightTab);
             tabControl.Items.Add(_movementTab);
             tabControl.Items.Add(_cogTab);
             tabControl.Items.Add(_marbleTab);
+            tabControl.Items.Add(_infoTab);
 
         }
 
@@ -75,7 +79,7 @@ namespace SmartChair.controller
             _dataController.AddSensorDataListener(_wc);
         }
 
-        public void navigateCOG(Frame frame)
+        private void navigateCOG(Frame frame)
         {
             removeListener();
             CenterGravity cog = new CenterGravity();
@@ -85,7 +89,7 @@ namespace SmartChair.controller
             _lastPage = cog;
         }
 
-        public void navigateWeight(Frame frame)
+        private void navigateWeight(Frame frame)
         {
             removeListener();
             _wc.updateChart();
@@ -93,14 +97,30 @@ namespace SmartChair.controller
             _lastPage = _wc;
         }
 
-        public void navigateMovement(Frame frame)
+        private void navigateMovement(Frame frame)
         {
             removeListener();
             Movement movement = new Movement();
             _movementTab.Content = movement;
-           // movement.updateChart();
             frame.Navigate(movement);
             _lastPage = movement;
+        }
+
+        private void navigateInfo(Frame frame)
+        {
+            removeListener();
+            Info info = new Info();
+            _infoTab.Content = info;
+            frame.Navigate(info);
+            _lastPage = info;
+        }
+
+        private void navigateMarble(Frame frame)
+        {
+            removeListener();
+            Marble mb = new Marble();
+            frame.Navigate(mb);
+            _lastPage = mb;
         }
 
 
@@ -143,10 +163,7 @@ namespace SmartChair.controller
             }
             else if (ti.Equals(_marbleTab))
             {
-                removeListener();
-                Marble mb = new Marble();
-                f.Navigate(mb);
-                _lastPage = mb;
+                navigateMarble(f);
 
 
                 //NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
@@ -154,6 +171,10 @@ namespace SmartChair.controller
                 //                        MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
 
                 //MainController.GetInstance.EnqueNotificationMessage(msg);
+            }
+            else if(ti.Equals(_infoTab))
+            {
+                navigateInfo(f);
             }
 
             ti.Content = f;
