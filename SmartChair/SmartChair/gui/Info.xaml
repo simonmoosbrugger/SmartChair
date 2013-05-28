@@ -8,6 +8,6 @@
 	Title="Info">
 
     <Grid>
-
+        <Image Source="../images/sitzposition.png"/>
     </Grid>
 </Page>

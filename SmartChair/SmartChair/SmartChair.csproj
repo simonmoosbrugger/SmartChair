@@ -235,6 +235,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Resource Include="images\report.ico" />
+    <Resource Include="images\sitzposition.png" />
     <Content Include="lib\MahApps.Metro.dll" />
     <Content Include="lib\WPFToolkit.dll" />
     <EmbeddedResource Include="Properties\Resources.resx">

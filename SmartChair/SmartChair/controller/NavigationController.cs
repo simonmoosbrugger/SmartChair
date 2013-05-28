@@ -46,11 +46,12 @@ namespace SmartChair.controller
             _movementTab.Header = "Movement";
             _infoTab = new TabItem();
             _infoTab.Header = "Info";
+            tabControl.Items.Add(_infoTab);
             tabControl.Items.Add(_weightTab);
             tabControl.Items.Add(_movementTab);
             tabControl.Items.Add(_cogTab);
             tabControl.Items.Add(_marbleTab);
-            tabControl.Items.Add(_infoTab);
+
 
         }
 
