@@ -4,10 +4,48 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
 	Title="Info">
 
     <Grid>
-        <Image Source="../images/sitzposition.png"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="600"/>
+        </Grid.ColumnDefinitions>
+        
+        <Image Grid.Column="0" Grid.Row="0" Source="../images/sitzposition.png"/>
+        
+        <Grid Grid.Row="0" Grid.Column="1" Margin="50,50,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="1" FontFamily="Calibri Light" FontSize="20" Foreground="#41B1E1">So sitzen Sie richtig:</Label>
+            <Label Grid.Row="1" Grid.Column="0" FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="1)"/>
+            <Label Grid.Row="2" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="2)"/>
+            <Label Grid.Row="3" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="3)"/>
+            <Label Grid.Row="4" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="4)"/>
+            <Label Grid.Row="5" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="5)"/>
+            <Label Grid.Row="6" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="6)"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="1" Grid.Column="1" Margin="0,7.5,0,0">90° Referenzhaltung im Fußgelenk, im Knie in der Hüfte und im Ellbogen</TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="2" Grid.Column="1" Margin="0,7.5,0,0">Die Maus sollte neben der Tastatur liegen. Diese sollte so flach wie möglich sein</TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="3" Grid.Column="1" Margin="0,7.5,0,0">Die Sehdistanz sollte eine Armlänge betragen, die oberste Bilschrimzeile sollte auf etwa 15° unterhalb der Augenhöhe liegen</TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="4" Grid.Column="1" Margin="0,7.5,0,0">Blick und Körper zentral vor dem Bilschirm, Verdrehungen sollten vermieden werden</TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="5" Grid.Column="1" Margin="0,7.5,0,0">Kann der Tisch in der Höhe nicht verstellt werden, schafft eine Fußstütze Abhilfe</TextBlock>
+            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="6" Grid.Column="1" Margin="0,7.5,0,0"></TextBlock>
+        </Grid>
     </Grid>
 </Page>
