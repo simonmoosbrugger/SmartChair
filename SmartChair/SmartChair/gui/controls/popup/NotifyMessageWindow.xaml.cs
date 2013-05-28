@@ -22,6 +22,5 @@ namespace SmartChair.gui.controls.popup
         {
             InitializeComponent();
         }
-        //TODO: Skin als Resource einbinden
     }
 }
