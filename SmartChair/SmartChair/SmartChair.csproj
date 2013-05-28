@@ -89,6 +89,9 @@
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="db\DbUtil.cs" />
+    <Compile Include="gui\Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
     <Compile Include="gui\login\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -160,6 +163,10 @@
     <Page Include="gui\controls\popup\NotifyMessageWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="gui\Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="gui\login\LogIn.xaml">
       <SubType>Designer</SubType>
