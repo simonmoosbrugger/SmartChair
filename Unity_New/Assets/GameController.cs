@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 	private int totalGems;
 	private int foundGems;
 	private GameState gameState;
-	//private TcpClient _clientSocket;
+	private TcpClient _clientSocket;
 	
 	void Awake ()
 	{
@@ -28,10 +28,10 @@ public class GameController : MonoBehaviour
 		gameState = GameState.playing;
 		totalGems = GameObject.FindGameObjectsWithTag ("Pickup").Length;
 		foundGems = 0;
-		/*_clientSocket = new TcpClient ();
+		_clientSocket = new TcpClient ();
 		_clientSocket.Connect ("127.0.0.1", 9900);
 		Thread ctThread = new Thread (getMessage);
-		ctThread.Start ();*/
+		ctThread.Start ();
 		Time.timeScale = 1.0f;	
 	}
 
@@ -80,12 +80,12 @@ public class GameController : MonoBehaviour
 	private  void getMessage ()
 	{
 		while (true) {
-			//NetworkStream stream = _clientSocket.GetStream ();
+			NetworkStream stream = _clientSocket.GetStream ();
 			BinaryFormatter formatter = new BinaryFormatter ();
-			//object obj = formatter.Deserialize (stream);
-			//SensorData data = (SensorData)obj;
+			object obj = formatter.Deserialize (stream);
+			SensorData data = (SensorData)obj;
 			//Console.WriteLine (data.BottomLeft + " - " + data.BottomoRight + " - " + data.TopLeft + " - " + data.TopRight);
-			//_data = (SensorData)obj;
+			_data = (SensorData)obj;
 		}
 	}
 

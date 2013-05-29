@@ -10,7 +10,7 @@ public class SphereController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{	
-		/*SensorData data = GameController.SP._data;
+		SensorData data = GameController.SP._data;
 		if(data != null){
 			try{
 				float x = 0;
@@ -25,7 +25,7 @@ public class SphereController : MonoBehaviour
 				
 				rigidbody.AddForce(x,0, -y, ForceMode.Acceleration);
 			} catch (Exception) {}
-		}*/
+		}
 	}
 	
 	void OnTriggerEnter  (Collider other  ) {
