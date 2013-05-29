@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
 	private int totalGems;
 	private int foundGems;
 	private GameState gameState;
-	private TcpClient _clientSocket;
+	//private TcpClient _clientSocket;
 	
 	void Awake ()
 	{
@@ -28,18 +28,28 @@ public class GameController : MonoBehaviour
 		gameState = GameState.playing;
 		totalGems = GameObject.FindGameObjectsWithTag ("Pickup").Length;
 		foundGems = 0;
-		_clientSocket = new TcpClient ();
+		/*_clientSocket = new TcpClient ();
 		_clientSocket.Connect ("127.0.0.1", 9900);
 		Thread ctThread = new Thread (getMessage);
-		ctThread.Start ();
+		ctThread.Start ();*/
 		Time.timeScale = 1.0f;	
 	}
 
 	void OnGUI ()
 	{
-		GUILayout.Label ("Game started");
-		GUILayout.Label (" Found gems: " + foundGems + "/" + totalGems);
-
+		GUI.Box(new Rect(0,0,200,100),"");
+		GUI.Label(new Rect(8,10,100, 100),"Game started");
+		GUI.Label(new Rect(5,30,200,100), " Found gems: " + foundGems + "/" + totalGems);
+		if(GUI.Button(new Rect(40, 60, 100, 30), "Change")) {
+			if(Application.loadedLevel == 0) {
+				Application.LoadLevel (1);
+			}else {
+				Application.LoadLevel (0);
+			}
+		}
+		//GUILayout.Label (" Found gems: " + foundGems + "/" + totalGems);
+		
+		
 		if (gameState == GameState.lost) {
 			GUILayout.Label ("You Lost!");
 			if (GUILayout.Button ("Try again")) {
@@ -48,7 +58,8 @@ public class GameController : MonoBehaviour
 		} else if (gameState == GameState.won) {
 			GUILayout.Label ("You won!");
 			if (GUILayout.Button ("Play again")) {
-				Application.LoadLevel (Application.loadedLevel);
+				//Application.LoadLevel (Application.loadedLevel);
+				Application.LoadLevel (1);
 			}
 		}
 		
@@ -58,6 +69,7 @@ public class GameController : MonoBehaviour
 	public void FoundGem ()
 	{
 		foundGems++;
+		
 		if (foundGems >= totalGems) {
 			WonGame ();
 		}
@@ -68,12 +80,12 @@ public class GameController : MonoBehaviour
 	private  void getMessage ()
 	{
 		while (true) {
-			NetworkStream stream = _clientSocket.GetStream ();
+			//NetworkStream stream = _clientSocket.GetStream ();
 			BinaryFormatter formatter = new BinaryFormatter ();
-			object obj = formatter.Deserialize (stream);
+			//object obj = formatter.Deserialize (stream);
 			//SensorData data = (SensorData)obj;
 			//Console.WriteLine (data.BottomLeft + " - " + data.BottomoRight + " - " + data.TopLeft + " - " + data.TopRight);
-			_data = (SensorData)obj;
+			//_data = (SensorData)obj;
 		}
 	}
 

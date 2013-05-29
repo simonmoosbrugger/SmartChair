@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SphereController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TriggerSound.js">
     <Files>
-      <File FileName="Assets\GameController.cs" Line="27" Column="14" />
-      <File FileName="Assets\SphereController.cs" Line="22" Column="23" />
-      <File FileName="Assets\CameraFollower.cs" Line="11" Column="1" />
+      <File FileName="Assets\GameController.cs" Line="72" Column="3" />
+      <File FileName="Assets\SphereController.cs" Line="1" Column="1" />
+      <File FileName="Assets\CameraFollower.cs" Line="1" Column="1" />
       <File FileName="Assets\GameOverTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="1" Column="1" />
+      <File FileName="Assets\TriggerSound.js" Line="5" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
