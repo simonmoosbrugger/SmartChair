@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
 		GUI.Box(new Rect(0,0,200,100),"");
 		GUI.Label(new Rect(8,10,100, 100),"Game started");
 		GUI.Label(new Rect(5,30,200,100), " Found gems: " + foundGems + "/" + totalGems);
-		if(GUI.Button(new Rect(40, 60, 100, 30), "Change")) {
+		if(GUI.Button(new Rect(40, 60, 100, 30), "Next Level")) {
 			if(Application.loadedLevel == 0) {
 				Application.LoadLevel (1);
 			}else {

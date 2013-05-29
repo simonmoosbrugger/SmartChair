@@ -5,7 +5,7 @@ using System;
 
 public class SphereController : MonoBehaviour
 {
-	   public float movementSpeed = 6.0f;
+	public float movementSpeed = 6.0f;
 	private int factor = 2;
 	// Update is called once per frame
 	void Update ()
