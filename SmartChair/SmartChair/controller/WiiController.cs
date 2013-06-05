@@ -12,6 +12,8 @@ namespace SmartChair.controller
 {
     public class WiiController : DataController
     {
+        BalanceBoardState _state;
+        bool _firstvalue = true;
         public WiiController()
         {
             Init();
@@ -42,9 +44,11 @@ namespace SmartChair.controller
             float tl = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft;
             float tr = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopRight;
             float wkg = e.WiimoteState.BalanceBoardState.WeightKg;
+
             float x = e.WiimoteState.BalanceBoardState.CenterOfGravity.X;
             float y = e.WiimoteState.BalanceBoardState.CenterOfGravity.Y;
-            SensorData data = new SensorData(bl, br, tl, tr, wkg, new SensorData.CenterOfGravity(x, -y));
+
+            SensorData data = new SensorData(bl, br, tl, tr, wkg, new SensorData.CenterOfGravity(x, y));
             SendSensorData(data);
 
             float battery = e.WiimoteState.Battery;
