@@ -18,9 +18,12 @@ using SmartChair.model;
 using System.Diagnostics;
 using System.Globalization;
 using SmartChair.gui.settings;
+using System.Threading;
 
 namespace SmartChair
 {
+    
+
     /// <summary>
     /// Interaktionslogik für MainWindowMetro.xaml
     /// </summary>
@@ -33,9 +36,15 @@ namespace SmartChair
 
         public MainWindowMetro()
         {
+            //CultureInfo culture = new CultureInfo("en-GB");
+
+            //Thread.CurrentThread.CurrentCulture = culture;
+            //Thread.CurrentThread.CurrentUICulture = culture;
+            //FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(System.Windows.Markup.XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+
             InitializeComponent();
-            CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
-            CultureInfo.DefaultThreadCurrentCulture = culture;
+            
+
             _mc = MainController.GetInstance;
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);

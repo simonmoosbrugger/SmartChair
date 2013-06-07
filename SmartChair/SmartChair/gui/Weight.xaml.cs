@@ -85,7 +85,7 @@ namespace SmartChair.gui
             {
                 List<object> values = new List<object>();
                 values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));
-                values.Add(data.WeightKg.ToString());
+                values.Add(data.WeightKg);
                 values.Add(MainController.GetInstance.CurrentPerson.ID);
                 MainController.GetInstance.DbController.Insert("Weight", DbUtil.GetColumnNames("Weight"), values);
                 timer = DateTime.Now;

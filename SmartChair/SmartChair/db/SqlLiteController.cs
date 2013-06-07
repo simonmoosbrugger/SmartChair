@@ -78,7 +78,7 @@ namespace SmartChair.db
             {
                 if (value.GetType() == typeof(double) || value.GetType() == typeof(int))
                 {
-                    sb.Append(value + ",");                    
+                    sb.Append(value.ToString().Replace(',', '.') + ",");                    
                 }
                 else
                 {

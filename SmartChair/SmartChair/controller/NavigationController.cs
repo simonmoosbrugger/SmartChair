@@ -16,6 +16,7 @@ namespace SmartChair.controller
     {
         private DataController _dataController;
         private Weightcontrol _wc;
+        private CenterGravity _cog;
         private PageExtended _lastPage;
 
 
@@ -78,16 +79,17 @@ namespace SmartChair.controller
             _dataController = dataController;
             _wc = new Weightcontrol();
             _dataController.AddSensorDataListener(_wc);
+            _cog = new CenterGravity();
+            _dataController.AddSensorDataListener(_cog);
         }
 
         private void navigateCOG(Frame frame)
         {
             removeListener();
-            CenterGravity cog = new CenterGravity();
-            _dataController.AddSensorDataListener(cog);
-            _cogTab.Content = cog;
-            frame.Navigate(cog);
-            _lastPage = cog;
+            
+            _cogTab.Content = _cog;
+            frame.Navigate(_cog);
+            _lastPage = _cog;
         }
 
         private void navigateWeight(Frame frame)
