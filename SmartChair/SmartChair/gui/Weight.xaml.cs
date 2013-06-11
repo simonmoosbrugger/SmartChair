@@ -86,9 +86,12 @@ namespace SmartChair.gui
             {
                 DateTime date = DateTimeParser.getDateTimeFromSQLiteString(row["timestamp"].ToString());
                 double weight = (double)row["WeightKg"];
-                _chart.Series[0].Points.AddXY(date, weight);
-                _chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
-                _chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
+                _chart.Series[0].Points.AddXY(DateTime.Now, 65);
+                //_chart.Series[0].Points.AddXY(date, weight);
+                _chart.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.FixedCount;
+
+                //_chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Hours;
+                //_chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
             }
         }
 
@@ -99,7 +102,7 @@ namespace SmartChair.gui
 
         public void SensorDataUpdated(model.SensorData data)
         {
-            if ((DateTime.Now - timer).TotalMinutes >= Properties.Settings.Default.TimespanWeightSave)
+            if (data.WeightKg > 10 && (DateTime.Now - timer).TotalMinutes >= Properties.Settings.Default.TimespanWeightSave)
             {
                 List<object> values = new List<object>();
                 values.Add(DateTimeParser.getSQLiteSTringFromDateTime(DateTime.Now));
