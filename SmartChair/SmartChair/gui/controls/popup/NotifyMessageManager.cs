@@ -54,22 +54,22 @@ namespace SmartChair.gui.controls.popup
             get { return _isStarted; }
         }
 
-        public void Start()
+        public void Start(Dispatcher dispatcher)
         {
             lock (_syncRoot)
             {
                 if (!_isStarted)
                 {
                     _cts = new CancellationTokenSource();
-                    StartService(_cts.Token);
+                    StartService(_cts.Token,  dispatcher);
                     _isStarted = true;
                 }
             }
         }
 
-        private Task StartService(CancellationToken cancellationToken)
+        private Task StartService(CancellationToken cancellationToken, Dispatcher dispatcher)
         {
-            var dispatcher = Application.Current.MainWindow.Dispatcher;
+            //var dispatcher = Application.Current.MainWindow.Dispatcher;
 
             return Task.Factory.StartNew(() =>
             {
@@ -140,10 +140,10 @@ namespace SmartChair.gui.controls.popup
             return -1;
         }
 
-        public void EnqueueMessage(NotifyMessage msg)
+        public void EnqueueMessage(NotifyMessage msg, Dispatcher dispatcher)
         {
             QueuedMessages.Enqueue(msg);
-            Start();
+            Start(dispatcher);
         }
     }
 }

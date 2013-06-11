@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="controller\DataController.cs" />
     <Compile Include="controller\GameController.cs" />
+    <Compile Include="controller\MovementRecognitionController.cs" />
     <Compile Include="controller\NavigationController.cs" />
     <Compile Include="controller\TestDataController.cs" />
     <Compile Include="db\DbUtil.cs" />
