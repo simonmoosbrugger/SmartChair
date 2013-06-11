@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 	private int foundGems;
 	private GameState gameState;
 	private TcpClient _clientSocket;
+	private float time =2.0f;
+	private bool showBox = false;
 	
 	void Awake ()
 	{
@@ -37,28 +39,33 @@ public class GameController : MonoBehaviour
 
 	void OnGUI ()
 	{
-		GUI.Box(new Rect(0,0,200,100),"");
-		GUI.Label(new Rect(8,10,100, 100),"Game started");
-		GUI.Label(new Rect(5,30,200,100), " Found gems: " + foundGems + "/" + totalGems);
-		if(GUI.Button(new Rect(40, 60, 100, 30), "Next Level")) {
-			if(Application.loadedLevel == 0) {
-				Application.LoadLevel (1);
-			}else {
-				Application.LoadLevel (0);
+		if(!showBox) {
+			GUI.Box(new Rect(0,0,200,100),"");
+			GUI.Label(new Rect(8,10,100, 100),"Game started");
+			GUI.Label(new Rect(5,30,200,100), " Found gems: " + foundGems + "/" + totalGems);
+			if(GUI.Button(new Rect(40, 60, 100, 30), "Next Level")) {
+				if(Application.loadedLevel == 0) {
+					Application.LoadLevel (1);
+				}else {
+					Application.LoadLevel (0);
+				}
 			}
 		}
 		//GUILayout.Label (" Found gems: " + foundGems + "/" + totalGems);
 		
 		
-		if (gameState == GameState.lost) {
-			GUILayout.Label ("You Lost!");
-			if (GUILayout.Button ("Try again")) {
-				Application.LoadLevel (Application.loadedLevel);
+		if(gameState == GameState.lost) {
+			showBox = true;
+			GUI.Box(new Rect(Screen.width/2-100,Screen.height/2-100,200,100),"");
+			GUI.Label(new Rect(Screen.width/2-40,Screen.height/2-60,100, 100),"Game lost!");
+			while((time -=Time.deltaTime) > 0) {
+				Application.LoadLevel (0);
 			}
-		} else if (gameState == GameState.won) {
-			GUILayout.Label ("You won!");
-			if (GUILayout.Button ("Play again")) {
-				//Application.LoadLevel (Application.loadedLevel);
+		}else if(gameState == GameState.won) {
+			showBox = true;
+			GUI.Box(new Rect(Screen.width/2-100,Screen.height/2-100,200,100),"");
+			GUI.Label(new Rect(Screen.width/2-40,Screen.height/2-60,100, 100),"Game won!");
+			while((time -=Time.deltaTime) > 0) {
 				Application.LoadLevel (1);
 			}
 		}
