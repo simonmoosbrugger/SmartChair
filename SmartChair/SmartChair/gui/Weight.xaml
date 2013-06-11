@@ -3,17 +3,26 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:CHR="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"       
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
-      xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
-
+      d:DesignHeight="300"
+      d:DesignWidth="300">
+      
     <StackPanel Name="panel">
         <StackPanel Orientation="Horizontal" >
             <DatePicker Name="dp1" Width="140" Height="25" Margin="10,0"/>
             <DatePicker Name="dp2" Width="140" Height="25"/>
         </StackPanel>
-       
-       
+        
+        <WindowsFormsHost Name="Host">
+            <CHR:Chart Height="500">
+                <CHR:Chart.ChartAreas>
+                    <CHR:ChartArea x:Name="Area"/>
+                </CHR:Chart.ChartAreas>
+                <CHR:Chart.Series>
+                    <CHR:Series x:Name="Serie"/>
+                </CHR:Chart.Series>
+            </CHR:Chart>
+        </WindowsFormsHost>   
     </StackPanel>
 </Page>

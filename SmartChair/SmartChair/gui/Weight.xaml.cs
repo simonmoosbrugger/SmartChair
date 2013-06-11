@@ -1,5 +1,6 @@
 ﻿using SmartChair.controller;
 using SmartChair.db;
+using SmartChair.util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,38 +17,20 @@ namespace SmartChair.gui
     public partial class Weightcontrol : Page, PageExtended, SmartChair.controller.DataController.SensorDataListener
     {
         DateTime timer = new DateTime();
-        Series _serie;
-        Chart _chart;
-
 
         public Weightcontrol()
         {
             InitializeComponent();
-
-            _chart = new Chart();
-            ChartArea area = new ChartArea();
-
-            area.AxisX.Title = "t";
-            area.AxisX.Minimum = 0;
-            area.AxisX.MajorGrid.LineColor = Color.LightGray;
-            area.AxisY.Title = "KG";
-            area.AxisY.MajorGrid.LineColor = Color.LightGray;
-            _chart.ChartAreas.Add(area);
-            _serie = new Series();
-            _serie.ChartType = SeriesChartType.Line;
-            _serie.MarkerStyle = MarkerStyle.Diamond;
-            _serie.MarkerSize = 9;
-            _serie.Color = Color.LimeGreen;
-            _chart.Series.Add(_serie);
-
-            WindowsFormsHost host = new WindowsFormsHost();
-            host.Child = _chart;
-            panel.Children.Add(host);
-
+            Area.AxisX.Title = "t";
+            Area.AxisX.MajorGrid.LineColor = Color.LightGray;
+            Area.AxisY.Title = "KG";
+            Area.AxisY.MajorGrid.LineColor = Color.LightGray;
+            Serie.ChartType = SeriesChartType.Line;
+            Serie.MarkerStyle = MarkerStyle.Diamond;
+            Serie.MarkerSize = 9;
+            Serie.Color = Color.LimeGreen;
 
             MainController.GetInstance.DataController.AddSensorDataListener(this);
-
-
 
             dp1.SelectedDate = DateTime.Now.AddDays(-14);
             dp2.SelectedDate = DateTime.Now;
@@ -59,7 +42,7 @@ namespace SmartChair.gui
             updateChart();
         }
 
-        
+
 
         private void dp1_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -78,20 +61,18 @@ namespace SmartChair.gui
 
         public void updateChart()
         {
+            Serie.Points.Clear();
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
+            Area.AxisX.LabelStyle.Format = ChartUtil.SelectLabelStyle(dp2.SelectedDate - dp1.SelectedDate);
+            Area.AxisX.IntervalType = ChartUtil.SelectDateTimeInterval(dp2.SelectedDate - dp1.SelectedDate);
             DataTable dt = MainController.GetInstance.DbController.Execute("SELECT * FROM Weight WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.GetInstance.CurrentPerson.ID + ";");
 
             foreach (DataRow row in dt.Rows)
             {
                 DateTime date = DateTimeParser.getDateTimeFromSQLiteString(row["timestamp"].ToString());
                 double weight = (double)row["WeightKg"];
-                _chart.Series[0].Points.AddXY(DateTime.Now, 65);
-                //_chart.Series[0].Points.AddXY(date, weight);
-                _chart.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.FixedCount;
-
-                //_chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Hours;
-                //_chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
+                Serie.Points.AddXY(date, weight);
             }
         }
 
@@ -112,5 +93,7 @@ namespace SmartChair.gui
                 timer = DateTime.Now;
             }
         }
+
+        
     }
 }

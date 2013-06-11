@@ -135,6 +135,7 @@
     <Compile Include="MainWindowMetro.xaml.cs">
       <DependentUpon>MainWindowMetro.xaml</DependentUpon>
     </Compile>
+    <Compile Include="util\ChartUtil.cs" />
     <Compile Include="util\DateTimeParser.cs" />
     <Compile Include="gui\Weight.xaml.cs">
       <DependentUpon>Weight.xaml</DependentUpon>

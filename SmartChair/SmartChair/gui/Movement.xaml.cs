@@ -18,6 +18,7 @@ using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace SmartChair.gui
 {
@@ -26,34 +27,18 @@ namespace SmartChair.gui
     /// </summary>
     public partial class Movement : PageExtended
     {
-        Series _serie;
-        Chart _chart;
-
-
         public Movement()
         {
             InitializeComponent();
 
-            _chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ChartArea area = new ChartArea();
-
-            area.AxisX.Title = "t";
-            area.AxisX.Minimum = 0;
-            area.AxisX.MajorGrid.LineColor = Color.LightGray;
-            area.AxisY.Title = "Movement";
-            area.AxisY.MajorGrid.LineColor = Color.LightGray;
-            _chart.ChartAreas.Add(area);
-            _serie = new Series();
-            _serie.ChartType = SeriesChartType.Line;
-            _serie.MarkerStyle = MarkerStyle.Diamond;
-            _serie.MarkerSize = 9;
-            _serie.Color = Color.LimeGreen;
-            _chart.Series.Add(_serie);
-
-            WindowsFormsHost host = new WindowsFormsHost();
-            host.Child = _chart;
-            panel.Children.Add(host);
-
+            Area.AxisX.Title = "t";
+            Area.AxisX.MajorGrid.LineColor = Color.LightGray;
+            Area.AxisY.Title = "Movement";
+            Area.AxisY.MajorGrid.LineColor = Color.LightGray;
+            Serie.ChartType = SeriesChartType.Line;
+            Serie.MarkerStyle = MarkerStyle.Diamond;
+            Serie.MarkerSize = 9;
+            Serie.Color = Color.LimeGreen;
 
             dp1.SelectedDate = DateTime.Now.AddDays(-14);
             dp2.SelectedDate = DateTime.Now;
@@ -81,19 +66,19 @@ namespace SmartChair.gui
 
         public void updateChart()
         {
+            Serie.Points.Clear();
             string date1 = dp1.SelectedDate.Value.ToString("MM.dd.yyyy") + " 00:00:00";
             string date2 = dp2.SelectedDate.Value.ToString("MM.dd.yyyy") + " 23:59:59";
+            Area.AxisX.LabelStyle.Format = ChartUtil.SelectLabelStyle(dp2.SelectedDate - dp1.SelectedDate);
+            Area.AxisX.IntervalType = ChartUtil.SelectDateTimeInterval(dp2.SelectedDate - dp1.SelectedDate);
             DataTable dt = MainController.GetInstance.DbController.Execute("SELECT * FROM CenterOfGravityData WHERE Timestamp >= '" + date1 + "' AND Timestamp < '" + date2 + "' AND PersonRef = " + MainController.GetInstance.CurrentPerson.ID + ";");
 
-            List<KeyValuePair<DateTime, double>> values = new List<KeyValuePair<DateTime, double>>();
             foreach (DataRow row in dt.Rows)
             {
                 DateTime date = DateTimeParser.getDateTimeFromSQLiteString(row["timestamp"].ToString());
                 double x = (double)row["X"];
                 double y = (double)row["Y"];
-                _chart.Series[0].Points.AddXY(date, PointDistance.GetDistanceBetweenPoints(x, y));
-                _chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
-                _chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
+                Serie.Points.AddXY(date, PointDistance.GetDistanceBetweenPoints(x, y));
             }
         }
 
@@ -102,6 +87,33 @@ namespace SmartChair.gui
             return true;
         }
 
-       
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            Random r = new Random();
+            switch (r.Next(0, 3))
+            {
+                case 0:
+                    Area.AxisX.IntervalType = DateTimeIntervalType.Days;
+                    Debug.WriteLine("Days");
+                    Debug.WriteLine(dp2.SelectedDate - dp1.SelectedDate);
+                    break;
+                case 1:
+                    Area.AxisX.IntervalType = DateTimeIntervalType.Hours;
+                    Debug.WriteLine("Hours");
+                    Debug.WriteLine(dp2.SelectedDate - dp1.SelectedDate);
+                    break;
+                case 2:
+                    Area.AxisX.IntervalType = DateTimeIntervalType.Months;
+                    Debug.WriteLine("Months");
+                    Debug.WriteLine(dp2.SelectedDate - dp1.SelectedDate);
+                    break;
+                case 3:
+                    Area.AxisX.IntervalType = DateTimeIntervalType.Minutes;
+                    Debug.WriteLine("Minutes");
+                    Debug.WriteLine(dp2.SelectedDate - dp1.SelectedDate);
+                    break;
+            }
+
+        }
     }
 }
