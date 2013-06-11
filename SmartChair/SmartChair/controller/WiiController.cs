@@ -12,8 +12,6 @@ namespace SmartChair.controller
 {
     public class WiiController : DataController
     {
-        BalanceBoardState _state;
-        bool _firstvalue = true;
         public WiiController()
         {
             Init();
