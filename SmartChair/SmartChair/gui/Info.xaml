@@ -13,7 +13,7 @@
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="600"/>
+            <ColumnDefinition Width="700"/>
         </Grid.ColumnDefinitions>
         
         <Image Grid.Column="0" Grid.Row="0" Source="../images/sitzposition.png"/>
@@ -40,15 +40,15 @@
             <Label Grid.Row="4" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="4)"/>
             <Label Grid.Row="5" Grid.Column="0"  FontFamily="Calibri Light" FontSize="16" Foreground="#41B1E1" Content="5)"/>
        
-            <TextBlock TextWrapping="WrapWithOverflow" Grid.Row="1" Grid.Column="1" Margin="0,7.5,0,0">90° Referenzhaltung im Fußgelenk, im Knie in der Hüfte und im Ellbogen</TextBlock>
-            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="2" Grid.Column="1" Margin="0,7.5,0,0">Die Maus sollte neben der Tastatur liegen. Diese sollte so flach wie möglich sein</TextBlock>
-            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="3" Grid.Column="1" Margin="0,7.5,0,0">Die Sehdistanz sollte eine Armlänge betragen, die oberste Bilschrimzeile sollte auf etwa 15° unterhalb der Augenhöhe liegen</TextBlock>
-            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="4" Grid.Column="1" Margin="0,7.5,0,0">Blick und Körper zentral vor dem Bilschirm, Verdrehungen sollten vermieden werden</TextBlock>
-            <TextBlock TextWrapping="WrapWithOverflow"  Grid.Row="5" Grid.Column="1" Margin="0,7.5,0,0">Kann der Tisch in der Höhe nicht verstellt werden, schafft eine Fußstütze Abhilfe</TextBlock>
+            <TextBlock FontSize="16" TextWrapping="WrapWithOverflow" Grid.Row="1" Grid.Column="1" Margin="0,3,0,0">90° Referenzhaltung im Fußgelenk, im Knie in der Hüfte und im Ellbogen</TextBlock>
+            <TextBlock FontSize="16" TextWrapping="WrapWithOverflow"  Grid.Row="2" Grid.Column="1" Margin="0,3,0,0">Die Maus sollte neben der Tastatur liegen. Diese sollte so flach wie möglich sein</TextBlock>
+            <TextBlock FontSize="16" TextWrapping="WrapWithOverflow"  Grid.Row="3" Grid.Column="1" Margin="0,3,0,0">Die Sehdistanz sollte eine Armlänge betragen, die oberste Bilschrimzeile sollte auf etwa 15° unterhalb der Augenhöhe liegen</TextBlock>
+            <TextBlock FontSize="16" TextWrapping="WrapWithOverflow"  Grid.Row="4" Grid.Column="1" Margin="0,3,0,0">Blick und Körper zentral vor dem Bilschirm, Verdrehungen sollten vermieden werden</TextBlock>
+            <TextBlock FontSize="16" TextWrapping="WrapWithOverflow"  Grid.Row="5" Grid.Column="1" Margin="0,3,0,0">Kann der Tisch in der Höhe nicht verstellt werden, schafft eine Fußstütze Abhilfe</TextBlock>
             <StackPanel Margin="20" Grid.Row="6" Grid.Column="1">
                 <Label Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" FontFamily="Calibri" FontSize="20" FontWeight="ExtraBold" Foreground="#41B1E1">BEWEGUNG IST BEIM SITZEN AM WICHTIGSTEN</Label>
-                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,7.5,0,0">Doch auch die günstigste Grundposition wird zur einseitigen Belastung, wenn man zu lange unbeweglich in ihr verharrt. Deshalb ist es bei längerem Sitzen wichtiger, auf häufige Haltungswechsel zu achten als auf die "richtige" Sitzposition. Sich nach einer Weile aufrechten Sitzens auf dem Stuhl zu "lümmeln", entlastet die Bandscheiben ähnlich wie das Einnehmen der aufrechten Sitzposition nach einer Sitzphase in entspannter Haltung.</TextBlock>
-                <TextBlock TextAlignment="Center" FontSize="12" TextWrapping="WrapWithOverflow" Margin="0,7.5,0,0">Die SmartChair Software unterstützt genau diese Aspekte und versucht den Sitzenden zur Bewegung zu animieren</TextBlock>
+                <TextBlock TextAlignment="Justify" FontSize="16" TextWrapping="WrapWithOverflow" Margin="0,3,0,0">Doch auch die günstigste Grundposition wird zur einseitigen Belastung, wenn man zu lange unbeweglich in ihr verharrt. Deshalb ist es bei längerem Sitzen wichtiger, auf häufige Haltungswechsel zu achten als auf die "richtige" Sitzposition. Sich nach einer Weile aufrechten Sitzens auf dem Stuhl zu "lümmeln", entlastet die Bandscheiben ähnlich wie das Einnehmen der aufrechten Sitzposition nach einer Sitzphase in entspannter Haltung.</TextBlock>
+                <TextBlock TextAlignment="Justify" FontSize="16" TextWrapping="WrapWithOverflow" Margin="0,3,0,0">Die SmartChair Software unterstützt genau diese Aspekte und versucht den Sitzenden zur Bewegung zu animieren</TextBlock>
             </StackPanel>
             
           

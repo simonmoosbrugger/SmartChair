@@ -11,8 +11,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.Integration;
 using System.Windows.Input;
-using System.Windows.Media;
+using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -24,9 +26,35 @@ namespace SmartChair.gui
     /// </summary>
     public partial class Movement : PageExtended
     {
+        Series _serie;
+        Chart _chart;
+
+
         public Movement()
         {
             InitializeComponent();
+
+            _chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ChartArea area = new ChartArea();
+
+            area.AxisX.Title = "t";
+            area.AxisX.Minimum = 0;
+            area.AxisX.MajorGrid.LineColor = Color.LightGray;
+            area.AxisY.Title = "Movement";
+            area.AxisY.MajorGrid.LineColor = Color.LightGray;
+            _chart.ChartAreas.Add(area);
+            _serie = new Series();
+            _serie.ChartType = SeriesChartType.Line;
+            _serie.MarkerStyle = MarkerStyle.Diamond;
+            _serie.MarkerSize = 9;
+            _serie.Color = Color.LimeGreen;
+            _chart.Series.Add(_serie);
+
+            WindowsFormsHost host = new WindowsFormsHost();
+            host.Child = _chart;
+            panel.Children.Add(host);
+
+
             dp1.SelectedDate = DateTime.Now.AddDays(-14);
             dp2.SelectedDate = DateTime.Now;
 
@@ -63,10 +91,10 @@ namespace SmartChair.gui
                 DateTime date = DateTimeParser.getDateTimeFromSQLiteString(row["timestamp"].ToString());
                 double x = (double)row["X"];
                 double y = (double)row["Y"];
-                values.Add(new KeyValuePair<DateTime, double>(date, PointDistance.GetDistanceBetweenPoints(x,y)));
+                _chart.Series[0].Points.AddXY(date, PointDistance.GetDistanceBetweenPoints(x, y));
+                _chart.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
+                _chart.ChartAreas[0].AxisX.LabelStyle.Format = "dd.MM.yyyy";
             }
-            lineChart.DataContext = values;
-
         }
 
         public bool RemoveListener()
