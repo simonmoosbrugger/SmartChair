@@ -46,6 +46,7 @@ namespace SmartChair
             
 
             _mc = MainController.GetInstance;
+            _mc.MainWindowDispatcher = this.Dispatcher;
             _mc.NavigationController.InitTabs(tabControl);
             _gc = new GameController(_mc.DataController);
             Person p = _mc.CurrentPerson;

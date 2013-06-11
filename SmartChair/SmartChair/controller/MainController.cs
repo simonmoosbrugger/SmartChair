@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using SmartChair.gui.controls.popup;
+using System.Windows.Threading;
 
 namespace SmartChair.controller
 {
@@ -16,12 +17,19 @@ namespace SmartChair.controller
         private static MainController _c;
         private PersonController _personController;
 
-     
+        public Dispatcher _mainWindowDispatcher;
+
         private DataController _dataController;
         private DbController _dbController;
         private NavigationController _navigationController;
 
         private NotifyMessageManager _notifyMessageMgr;
+
+        public Dispatcher MainWindowDispatcher
+        {
+            get { return _mainWindowDispatcher; }
+            set { _mainWindowDispatcher = value; }
+        }
 
         public Person CurrentPerson
         {
@@ -37,7 +45,7 @@ namespace SmartChair.controller
         {
             get { return _dataController; }
         }
-        
+
         public DbController DbController
         {
             get { return _dbController; }
@@ -45,23 +53,25 @@ namespace SmartChair.controller
 
         public NavigationController NavigationController
         {
-            get {
+            get
+            {
                 if (_navigationController == null)
                 {
                     _navigationController = new NavigationController(_dataController);
                 }
-                return _navigationController; 
+                return _navigationController;
             }
         }
 
         public static MainController GetInstance
         {
-            get {
+            get
+            {
                 if (_c == null)
                 {
-                    _c = new MainController();                    
+                    _c = new MainController();
                 }
-                return MainController._c; 
+                return MainController._c;
             }
         }
 
@@ -71,7 +81,9 @@ namespace SmartChair.controller
             _dataController = new TestDataController();
             //_dataController = new WiiController();
             _personController = new PersonController(_dbController);
-  
+
+            _dataController.AddSensorDataListener(new MovementRecognitionController());
+
             List<Person> persons = _personController.getPersons();
             try
             {
@@ -93,12 +105,12 @@ namespace SmartChair.controller
                     200,
                     150
                 );
-            _notifyMessageMgr.Start();
+            //_notifyMessageMgr.Start();
         }
 
         public void EnqueNotificationMessage(NotifyMessage message)
         {
-            _notifyMessageMgr.EnqueueMessage(message);
+            _notifyMessageMgr.EnqueueMessage(message, _mainWindowDispatcher);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace SmartChair.controller
         TabItem _weightTab;
         TabItem _movementTab;
         TabItem _cogTab;
-        TabItem _marbleTab;
+        public TabItem _marbleTab;
         TabItem _infoTab;
 
 
@@ -86,7 +86,6 @@ namespace SmartChair.controller
         private void navigateCOG(Frame frame)
         {
             removeListener();
-            
             _cogTab.Content = _cog;
             frame.Navigate(_cog);
             _lastPage = _cog;
@@ -167,13 +166,6 @@ namespace SmartChair.controller
             else if (ti.Equals(_marbleTab))
             {
                 navigateMarble(f);
-
-
-                //NotifyMessage msg = new NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/GreenSkin.png", "Rapunzel", "Green Skin has been chosen.",
-                //                        () =>
-                //                        MessageBox.Show("Green Skin has been chosen.", "Green Skin", MessageBoxButton.OK));
-
-                //MainController.GetInstance.EnqueNotificationMessage(msg);
             }
             else if(ti.Equals(_infoTab))
             {
