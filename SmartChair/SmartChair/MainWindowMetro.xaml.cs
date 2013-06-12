@@ -36,6 +36,7 @@ namespace SmartChair
 
         public MainWindowMetro()
         {
+            
             //CultureInfo culture = new CultureInfo("en-GB");
 
             //Thread.CurrentThread.CurrentCulture = culture;
@@ -43,7 +44,8 @@ namespace SmartChair
             //FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(System.Windows.Markup.XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
 
             InitializeComponent();
-            
+
+            MessageBox.Show("Bitte nicht auf den Stuhl sitzen, bis das Program gestartet ist!", "Achtung", MessageBoxButton.OK);
 
             _mc = MainController.GetInstance;
             _mc.MainWindowDispatcher = this.Dispatcher;

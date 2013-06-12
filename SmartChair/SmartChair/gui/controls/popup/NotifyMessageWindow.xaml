@@ -14,7 +14,7 @@
         </Storyboard>
         <Storyboard x:Key="fadeInfadeOutStoryboard">
             <DoubleAnimation Storyboard.TargetProperty="(Window.Opacity)" From="0.0" To="1.0" AutoReverse="True"
-                    AccelerationRatio="0.4" DecelerationRatio="0.6" Duration="0:0:3"></DoubleAnimation>
+                    AccelerationRatio="0.4" DecelerationRatio="0.6" Duration="0:0:8"></DoubleAnimation>
         </Storyboard>
    </Window.Resources>
     <Window.Triggers>

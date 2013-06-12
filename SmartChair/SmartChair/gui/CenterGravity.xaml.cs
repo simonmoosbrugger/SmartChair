@@ -83,7 +83,6 @@ namespace SmartChair.gui
                     _dtStart = data.Date;
                     _first = false;
                 }
-
                 _serie.Points.Add(new DataPoint(Math.Round((data.Date - _dtStart).TotalSeconds, 0), PointDistance.GetDistanceBetweenPoints(x, y)));
             }
             catch (Exception)

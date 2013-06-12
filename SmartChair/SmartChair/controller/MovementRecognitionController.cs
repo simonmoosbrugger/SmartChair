@@ -47,11 +47,11 @@ namespace SmartChair.controller
     {
         private DateTime _start;
         private int _minutes = 1;
-        private int _minMovesCount = 20;
+        private int _minMovesCount = 2;
 
         private Point _initialPoint;
-        private float _threshold = 2.0f;
-        private int _pointsToAnalyse = 5;
+        private float _threshold = 5.0f;
+        private int _pointsToAnalyse = 15;
 
         private bool _moved = false;
         private int _movesCount = 0;
@@ -98,15 +98,15 @@ namespace SmartChair.controller
 
 
             //TODO: 
-            if ((DateTime.Now - _start).TotalMinutes > _minutes)
+            if ((DateTime.Now - _start).TotalSeconds > 30)
             {
                 if (_movesCount < _minMovesCount)
                 {
                     //MainController.GetInstance.NavigationController.Navigate(MainController.GetInstance.NavigationController._marbleTab)
-                    MainController.GetInstance.EnqueNotificationMessage(new gui.controls.popup.NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/BlueSkin.png", "asdffsda", "Spiel???", () => MainController.GetInstance.NavigationController._marbleTab.IsSelected = true));
-                    _start = DateTime.Now;
-                    _movesCount = 0;
+                    MainController.GetInstance.EnqueNotificationMessage(new gui.controls.popup.NotifyMessage(System.AppDomain.CurrentDomain.BaseDirectory + "images/BlueSkin.png", "Bewege dich!", "Mit einem Spiel? Klick mich", () => MainController.GetInstance.NavigationController._marbleTab.IsSelected = true));
                 }
+                _start = DateTime.Now;
+                _movesCount = 0;
             }
         }
 
