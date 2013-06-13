@@ -58,16 +58,30 @@ public class GameController : MonoBehaviour
 			showBox = true;
 			GUI.Box(new Rect(Screen.width/2-100,Screen.height/2-100,200,100),"");
 			GUI.Label(new Rect(Screen.width/2-40,Screen.height/2-60,100, 100),"Game lost!");
-			while((time -=Time.deltaTime) > 0) {
-				Application.LoadLevel (0);
+			if(GUI.Button(new Rect(Screen.width/2-30,Screen.height/2-35,80,30), "Try again!")) {
+				if(Application.loadedLevel == 0) {
+					Application.LoadLevel (0);
+				}else if(Application.loadedLevel == 1){
+					Application.LoadLevel (1);
+				}
 			}
+			/*while((time -=Time.deltaTime) > 0) {
+				Application.LoadLevel (0);
+			}*/
 		}else if(gameState == GameState.won) {
 			showBox = true;
 			GUI.Box(new Rect(Screen.width/2-100,Screen.height/2-100,200,100),"");
 			GUI.Label(new Rect(Screen.width/2-40,Screen.height/2-60,100, 100),"Game won!");
-			while((time -=Time.deltaTime) > 0) {
-				Application.LoadLevel (1);
+			if(GUI.Button(new Rect(Screen.width/2-30,Screen.height/2-35,80,30), "Try again!")) {
+				if(Application.loadedLevel == 0) {
+					Application.LoadLevel (1);
+				}else if(Application.loadedLevel == 1){
+					Application.LoadLevel (0);
+				}
 			}
+			/*while((time -=Time.deltaTime) > 0) {
+				Application.LoadLevel (1);
+			}*/
 		}
 		
 
