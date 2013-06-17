@@ -7,21 +7,30 @@ Direct3D:
     VRAM:     1003 MB (via DXGI)
     Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 DF24=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\SensorData.dll (this message is harmless)
-Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\SensorData.dll into Unity Child Domain
-- Completed reload, in  0.266 seconds
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\SensorData.dll (this message is harmless)
+Loading C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\SensorData.dll into Unity Child Domain
+- Completed reload, in  0.043 seconds
 <RI> Initializing input.
 XInput1_3.dll not found.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\SmartChair\SmartChair\bin\Debug\marble_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Simon Moosbrugger\Documents\GitHub\SmartChair\marble_Data_bin\marble_Data\Managed\System.dll (this message is harmless)
+SocketException: Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte.
+
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
