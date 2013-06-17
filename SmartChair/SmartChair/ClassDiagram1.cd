@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SmartChair.App" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.MainWindowMetro" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAQAAAAAAAAAAABABDABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindowMetro.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.DataController" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAIAAAAhAQQBBgAAAAAAIAAQAAAA=</HashCode>
+      <FileName>controller\DataController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.GameController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAoAACAEAAAEAAAAIAAAAAAAEAAAAA=</HashCode>
+      <FileName>controller\GameController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.controller.MainController" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAgAIAgAIAQgAAoABAAAAIACIAAAAEABAAA=</HashCode>
+      <FileName>controller\MainController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.Point" Collapsed="true">
+    <Position X="7" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>controller\MovementRecognitionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.MovementRecognitionController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAkCQAAAgAAAAACIAAAAAAAAgCAAAAiAAAAAAAQ=</HashCode>
+      <FileName>controller\MovementRecognitionController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.controller.NavigationController" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAMgQAAYAgIAABAQiAAQAEAAKBAhAAQgBAAAAA=</HashCode>
+      <FileName>controller\NavigationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.PersonController" Collapsed="true">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UAEAAAAAAAEAAQAAAAQAAAgAAAAAAAAhAAAAAAACAAA=</HashCode>
+      <FileName>controller\PersonController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.TestDataController" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAQABAAEAAAAAAAAAAAABAEAABAAAAAAABAAAAA=</HashCode>
+      <FileName>controller\TestDataController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.WiiController" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAIAA=</HashCode>
+      <FileName>controller\WiiController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.controller.DateTimeParser" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>util\DateTimeParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.db.DbUtil" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>db\DbUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.db.SqlLiteController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGQAAEAAAAAAAAQABAACAAAAAAEAQAAAAAACAACAAAA=</HashCode>
+      <FileName>db\SqlLiteController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.CenterGravity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAgAQCAACAAAAAAIAAAAAQAAAgAAAA=</HashCode>
+      <FileName>gui\CenterGravity.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.Info" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\Info.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.LogIn" Collapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\login\LogIn.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.Marble" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAgAQAAAAMAAACACAAAEAUAAIIAAAEAAAAQAAAA=</HashCode>
+      <FileName>gui\Marble.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.Movement" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAABAAAAAAAAIAAAAAAAAACAAAA=</HashCode>
+      <FileName>gui\Movement.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.CogSettings" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\settings\CogSettings.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.WeightSettings" Collapsed="true">
+    <Position X="12.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\settings\WeightSettings.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.Weightcontrol" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAIAAAACAAAAAAAAAIAAAAAAAAACAAAA=</HashCode>
+      <FileName>gui\Weight.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.WindowHost" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\WindowHost.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.cog" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADACAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAgACAAABg=</HashCode>
+      <FileName>gui\controls\cog.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.AnimatedLocation" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAgAAAAAAEEAAAAAAAAAAEBAAAAEAAAAAAgAAA=</HashCode>
+      <FileName>gui\controls\popup\AnimatedLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.DelegateCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\controls\popup\DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.NotifyMessage" Collapsed="true">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAIAAAABIAAAAAACAAAAAAAAAACAAQAAAEA=</HashCode>
+      <FileName>gui\controls\popup\NotifyMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.NotifyMessageManager" Collapsed="true">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAIAAAAAAAIAAAAAJIEBAIIAAQABAAAAA=</HashCode>
+      <FileName>gui\controls\popup\NotifyMessageManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.NotifyMessageViewModel" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAAAAAAAABAAIAAEAAAAAAAAAAACAAIBAAAAA=</HashCode>
+      <FileName>gui\controls\popup\NotifyMessageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.NotifyMessageWindow" Collapsed="true">
+    <Position X="12.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\controls\popup\NotifyMessageWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.controls.popup.Screen" Collapsed="true">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\controls\popup\Screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.login.SwitchUser" Collapsed="true">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\login\SwitchUser.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.settings.MovementSettings" Collapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\settings\MovementSettings.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.gui.settings.Settings" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\settings\Settings.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.model.Person" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAgAAgAAMAAAAgAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>model\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.Properties.Resources" Collapsed="true">
+    <Position X="10.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.Properties.Settings" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAKAAAAAABAAAIAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.util.ChartUtil" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>util\ChartUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartChair.util.PointDistance" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>util\PointDistance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SmartChair.db.DbController" Collapsed="true">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAQAAAACAAAAAAEAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>db\DbController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartChair.gui.PageExtended" Collapsed="true">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>gui\ExtendedPage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

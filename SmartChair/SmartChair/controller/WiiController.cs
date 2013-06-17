@@ -47,12 +47,15 @@ namespace SmartChair.controller
                 _firstValue = false;
             }
 
+            //Sensorwerte normieren
             float bl = e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomLeft - _firstState.SensorValuesKg.BottomLeft;
             float br = e.WiimoteState.BalanceBoardState.SensorValuesKg.BottomRight - _firstState.SensorValuesKg.BottomRight;
             float tl = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopLeft - _firstState.SensorValuesKg.TopLeft;
             float tr = e.WiimoteState.BalanceBoardState.SensorValuesKg.TopRight - _firstState.SensorValuesKg.TopRight;
             //float wkg = e.WiimoteState.BalanceBoardState.WeightKg;
 
+
+            //NEuberechnug des Gewichts und des SChwerpunktes
             float wkg = (tl + tr + bl + br) / 4.0f;
 
             float x = 0, y = 0;

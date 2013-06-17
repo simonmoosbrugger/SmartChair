@@ -45,6 +45,7 @@ namespace SmartChair.controller
 
     public class MovementRecognitionController : SmartChair.controller.DataController.SensorDataListener
     {
+        #region global variables
         private DateTime _start;
         private int _minutes = 1;
         private int _minMovesCount = 5;
@@ -56,6 +57,7 @@ namespace SmartChair.controller
         private bool _moved = false;
         private int _movesCount = 0;
         private int _count = 0,_countInArea = 0, _countOutArea = 0;
+        #endregion
 
         public void SensorDataUpdated(SensorData data)
         {
