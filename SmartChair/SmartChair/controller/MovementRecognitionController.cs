@@ -47,7 +47,7 @@ namespace SmartChair.controller
     {
         private DateTime _start;
         private int _minutes = 1;
-        private int _minMovesCount = 2;
+        private int _minMovesCount = 5;
 
         private Point _initialPoint;
         private float _threshold = 5.0f;

@@ -5,8 +5,8 @@ using System;
 
 public class SphereController : MonoBehaviour
 {
-	public float movementSpeed = 6.0f;
-	private int factor = 2;
+	public float movementSpeed = 1.0f;
+	private int factor = 1;
 	// Update is called once per frame
 	void Update ()
 	{	
@@ -15,11 +15,11 @@ public class SphereController : MonoBehaviour
 			try{
 				float x = 0;
 				float y = 0;
-				if(data.Cog.X >= 5 || data.Cog.X <= -5){
+				if(data.Cog.X >= 3 || data.Cog.X <= -2){
 					x = data.Cog.X * factor;
 				}
 				
-				if(data.Cog.Y >= 1 || data.Cog.Y <= -5){
+				if(data.Cog.Y >= 0.7 || data.Cog.Y <= -0.7){
 					y = data.Cog.Y * factor;
 				}
 				
