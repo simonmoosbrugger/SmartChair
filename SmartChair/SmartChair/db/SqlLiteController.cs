@@ -12,10 +12,6 @@ namespace SmartChair.db
 {
     public class SqlLiteController : DbController
     {
-
-    }
-}
-
         string _DataSource = "SmartChairDB.db";
         string _CreateScript = @"db/DbCreate.sql";
         SQLiteConnection _Connection;
